@@ -85,6 +85,10 @@
   .chapter p{font-size:1rem;line-height:1.72}
   .practical{font-size:.86rem!important;color:var(--cream-soft);letter-spacing:.01em;margin:0;padding-top:1rem;border-top:1px solid var(--hair)}
   .personal{font-family:'Newsreader',serif;font-size:clamp(1.25rem,2vw,1.55rem)!important;font-style:italic;line-height:1.45!important;color:var(--cream);margin:0}
+  .detail-ledger{margin:0;border-top:1px solid var(--hair)}
+  .detail-ledger>div{display:grid;grid-template-columns:minmax(92px,.42fr) minmax(0,1.58fr);gap:1.15rem;padding:.95rem 0;border-bottom:1px solid var(--hair)}
+  .detail-ledger dt{color:var(--cream);font-size:.76rem;font-weight:600;letter-spacing:.075em;text-transform:uppercase}
+  .detail-ledger dd{color:var(--cream-soft);font-size:.92rem;line-height:1.58;margin:0}
   .choose{color:var(--cream);margin-top:.2rem}
   .media{margin:0;position:relative;overflow:hidden;background:var(--night-2)}
   .media img{width:100%;height:100%;object-fit:cover}
@@ -114,7 +118,7 @@
   .sunset-heading{max-width:1200px;margin:0 auto;padding:0 var(--page-gutter) clamp(2.5rem,5vw,5rem)}
   .sunset-heading h2{max-width:760px}
   .sunset-heading .promise{max-width:650px;margin-top:1.5rem}
-  .route{display:grid;grid-template-columns:1fr .78fr 1.16fr;gap:clamp(1rem,2.5vw,2.5rem);max-width:1320px;margin:0 auto;padding:0 var(--page-gutter);position:relative;align-items:start}
+  .route{display:grid;grid-template-columns:1fr .9fr 1.22fr;gap:clamp(1rem,2.5vw,2.5rem);max-width:1320px;margin:0 auto;padding:0 var(--page-gutter);position:relative;align-items:start}
   .route-stop{position:relative}
   .route-stop:nth-child(2){margin-top:clamp(3rem,7vw,7rem)}
   .route-stop:nth-child(3){margin-top:clamp(1rem,3vw,3rem)}
@@ -125,7 +129,13 @@
   .route-copy{border-top:1px solid var(--sun);padding-top:1.1rem;position:relative}
   .route-copy::before{content:"";position:absolute;width:9px;height:9px;border:2px solid var(--sun);background:#111c1c;top:-6px;left:0;border-radius:50%}
   .route-stop strong{display:block;color:var(--cream);font-weight:600;margin-bottom:.45rem}
-  .route-stop p{color:var(--cream-soft);margin:0;max-width:27ch}
+  .route-stop p{color:var(--cream-soft);margin:0;max-width:34ch}
+  .boat-photo img{object-position:center 58%}
+  .ocean-band{max-width:1200px;margin:clamp(3.5rem,7vw,6rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr);gap:clamp(1.4rem,4vw,4rem);align-items:center}
+  .ocean-band .media{aspect-ratio:16/7;clip-path:inset(8% 0)}
+  .ocean-band-copy{border-top:1px solid var(--sun);padding-top:1.25rem}
+  .ocean-band-copy strong{display:block;font-family:'Newsreader',serif;font-size:1.45rem;font-weight:500;margin-bottom:.65rem}
+  .ocean-band-copy p{color:var(--cream-soft);margin:0;line-height:1.68}
   .sunset-bottom{max-width:1200px;margin:0 auto;padding:clamp(3.5rem,7vw,6rem) var(--page-gutter) 0;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,7vw,7rem);align-items:end}
   .sunset-bottom .personal{max-width:560px}
   .sunset-action{display:flex;flex-direction:column;gap:1rem;align-items:flex-start}
@@ -145,7 +155,7 @@
   .dinner-copy .personal{max-width:580px}
   .dinner-food{display:grid;grid-template-columns:.78fr 1.22fr;gap:.65rem;margin:.35rem 0}
   .dinner-food .media:first-child{aspect-ratio:4/5;clip-path:inset(0 12%)}
-  .dinner-food .media:first-child img{object-position:left center;transform:scale(1.38);transform-origin:left center}
+  .dinner-food .media:first-child img{object-position:center}
   .dinner-food .media:last-child{aspect-ratio:1/1;clip-path:inset(10% 0)}
 
   .closing{padding:clamp(5rem,9vw,8rem) var(--page-gutter);background:#071719}
@@ -153,8 +163,8 @@
   .closing h2{font-family:'Newsreader',serif;font-size:clamp(2.8rem,5vw,4.8rem);font-weight:500;letter-spacing:-.04em;line-height:.95;margin:0 0 1rem}
   .closing-intro{font-size:1rem;line-height:1.65;color:var(--cream-soft);margin:0 0 3rem}
   .closing-list{border-top:1px solid var(--hair)}
-  .closing-row{display:grid;grid-template-columns:minmax(260px,1.35fr) minmax(220px,1fr) minmax(150px,.72fr) auto;align-items:center;gap:clamp(1rem,3vw,3rem);min-height:96px;padding:1.2rem 0;border-bottom:1px solid var(--hair);color:var(--cream);text-decoration:none;transition:color .2s ease,padding .35s var(--ease)}
-  .closing-row:hover{color:var(--light);padding-left:.75rem}
+  .closing-row{display:grid;grid-template-columns:minmax(260px,1.35fr) minmax(220px,1fr) minmax(150px,.72fr) auto;align-items:center;gap:clamp(1rem,3vw,3rem);min-height:96px;padding:1.2rem 0;border-bottom:1px solid var(--hair);color:var(--cream);text-decoration:none;transition:color .2s ease,transform .35s var(--ease)}
+  .closing-row:hover{color:var(--light);transform:translateX(.75rem)}
   .closing-main{display:flex;flex-direction:column;gap:.3rem}
   .closing-main strong{font-family:'Newsreader',serif;font-size:1.45rem;font-weight:500;line-height:1.15}
   .closing-main em{color:var(--cream-soft);font-size:.78rem;font-style:normal;letter-spacing:.08em;text-transform:uppercase}
@@ -232,7 +242,10 @@
     .route-image{margin-bottom:1rem}
     .route-copy{border-top:0;border-left:1px solid var(--sun);padding:0 0 0 1.7rem}
     .route-copy::before{top:.4rem;left:-6px}
+    .ocean-band{grid-template-columns:1fr;margin-top:3.2rem}
+    .ocean-band .media{aspect-ratio:4/3;clip-path:inset(6% 0)}
     .sunset-bottom{grid-template-columns:1fr;padding-top:1.8rem}
+    .detail-ledger>div{grid-template-columns:1fr;gap:.4rem;padding:1rem 0}
     .chapter-dinner{display:flex;flex-direction:column;align-items:stretch;gap:3rem}
     .door-composition{height:64svh;min-height:480px}
     .dinner-main{width:83%}
@@ -248,7 +261,7 @@
     .closing-detail{grid-column:1}
     .closing-time{grid-column:1;color:rgba(247,240,227,.62)}
     .closing-arrow{grid-column:2;grid-row:2 / span 2;align-self:center}
-    .closing-row:hover{padding-left:0}
+    .closing-row:hover{transform:none}
   }
 
   @media(prefers-reduced-motion:reduce){
@@ -309,12 +322,17 @@
       </figure>
     </div>
     <div class="spa-story">
-      <p class="body">We arrive late morning and disappear into the same treatment room for an hour. After that, we can move slowly through the steam room, sauna and salt room, or do absolutely nothing by the warm pool. When we are ready, we walk back into Funchal and find dinner.</p>
-      <p class="practical"><strong>Laurea Spa, Savoy Palace</strong> · couples massage · full spa access · open daily, 10:00–20:00</p>
+      <p class="body">We check in at Savoy Palace late in the morning, change into robes and go into the same treatment room. The massage lasts an hour. After it ends, the rest of Laurea is ours for the day, so there is no appointment immediately after and no reason to hurry out.</p>
+      <dl class="detail-ledger">
+        <div><dt>The hour</dt><dd>The Ultimate Aromatherapy Experience for two: a sixty-minute massage side by side, using aromatherapy oils and a mix of pressure, Swedish and muscle-release techniques.</dd></div>
+        <div><dt>Afterwards</dt><dd>The heated lagoon pool, sauna, steam room, jacuzzi, salt room, sensory showers, ice fountain and relaxation room are all included with a treatment of sixty minutes or longer.</dd></div>
+        <div><dt>The place</dt><dd>Laurea is a 3,100 m² spa with thirteen treatment rooms, designed around Madeira's Laurissilva forest. It was named Portugal's Best Hotel Spa in 2021, 2024 and 2025.</dd></div>
+      </dl>
+      <p class="practical"><strong>Laurea Spa, Savoy Palace</strong> · Avenida do Infante 25, Funchal · open daily, 10:00–20:00</p>
       <figure class="media visual-mask spa-rest">
         <img src="img/spa-lounge.jpg" alt="Warm loungers beside the illuminated salt wall at Laurea Spa" width="600" height="600" loading="lazy" decoding="async">
       </figure>
-      <p class="personal">Because you love spas and experiences that feel out of the ordinary, and this is the most incredible spa I could find in Madeira, designed around the island's Laurissilva forest.</p>
+      <p class="personal">I picked it because you love spas and unusual experiences, and this is the most extraordinary spa I could find on the island. We can do the whole circuit together, then stay by the warm pool until we feel like leaving.</p>
       <button class="choose" type="button" data-choice="a">This one: Laurea <span aria-hidden="true">→</span></button>
     </div>
   </section>
@@ -326,22 +344,34 @@
     </header>
     <div class="route" aria-label="The plan for the day">
       <article class="route-stop">
-        <figure class="media visual-mask route-image"><img src="img/pastry-finished.jpg" alt="Custard being whisked during the pastéis de nata class" width="600" height="600" loading="lazy" decoding="async"></figure>
-        <div class="route-copy"><strong>In the kitchen</strong><p>We make the custard and fill the pastry shells ourselves.</p></div>
+        <figure class="media visual-mask route-image"><img src="img/pastry-making.jpg" alt="Hands holding a pastry shell filled with freshly made custard" width="600" height="600" loading="lazy" decoding="async"></figure>
+        <div class="route-copy"><strong>We make them together</strong><p>A local host takes us through the custard step by step. We shape the prepared puff pastry in the tins, fill each shell and get them into the oven ourselves.</p></div>
       </article>
       <article class="route-stop">
         <figure class="media visual-mask route-image"><img src="img/pastry-class.jpg" alt="Fresh pastéis de nata beside a glass of Madeira wine" width="600" height="600" loading="lazy" decoding="async"></figure>
-        <div class="route-copy"><strong>Still warm</strong><p>We eat them while they are still too hot, then take the coast road west to Calheta.</p></div>
+        <div class="route-copy"><strong>Then eat the evidence</strong><p>They come out blistered and still warm. We taste what we made over wine and take the extras with us. GetYourGuide currently lists the class as a Madeira bestseller and top pick; people especially mention the relaxed atmosphere, Portuguese food stories and music.</p></div>
       </article>
       <article class="route-stop">
-        <figure class="media visual-mask route-image"><img src="img/boat-dolphins.jpg" alt="A dolphin breaking the surface beside the boat off Madeira" width="1024" height="683" loading="lazy" decoding="async"></figure>
-        <div class="route-copy"><strong>The Atlantic</strong><p>Two and a half hours on a small boat until the light goes. Dolphins would be a bonus.</p></div>
+        <figure class="media visual-mask route-image boat-photo"><img src="img/boat-gringo.jpg" alt="Gringo, the On Tales Sea Ray yacht, anchored off Madeira with guests swimming beside it" width="1400" height="787" loading="lazy" decoding="async"></figure>
+        <div class="route-copy"><strong>This is Gringo</strong><p>The actual boat I would book: a Sea Ray 400 Sundancer rather than a crowded catamaran. It carries at most twelve guests and has shaded seating, a sun deck, cabin, bar, toilet and outdoor shower.</p></div>
       </article>
     </div>
+    <div class="ocean-band">
+      <figure class="media visual-mask"><img src="img/boat-dolphins.jpg" alt="A dolphin breaking the surface beside an On Tales boat off Madeira" width="1024" height="683" loading="lazy" decoding="async"></figure>
+      <div class="ocean-band-copy">
+        <strong>What happens on the water</strong>
+        <p>The trip lasts two and a half hours. An On Tales spotter watches from the cliffs and guides the crew towards activity offshore. Whales and dolphins are never promised; if the sea allows, there is also time to swim or snorkel before the ride back along the coast at sunset.</p>
+      </div>
+    </div>
     <div class="sunset-bottom">
-      <p class="personal">Because I can already picture us on the way back when the coast has gone dark.</p>
+      <p class="personal">I like this one because it gives us something to be bad at, laugh about and eat together before the boat. Then the whole day opens out into the Atlantic, and we come back with the coast going dark behind us.</p>
       <div class="sunset-action">
-        <p class="practical"><strong>Pastéis class, Funchal</strong> · 1.5 hours<br><strong>On Tales, Calheta</strong> · 2.5-hour sunset trip · drinks included</p>
+        <dl class="detail-ledger">
+          <div><dt>The class</dt><dd>Around two hours in a small group, with all ingredients, step-by-step instruction, wine, warm pastéis to eat and a few to take away.</dd></div>
+          <div><dt>The drive</dt><dd>From Funchal we head roughly one hour west to Marina da Calheta and meet the crew fifteen minutes before departure.</dd></div>
+          <div><dt>On board</dt><dd>Two and a half hours with soft drinks and local beer, plus towels, blankets and snorkelling equipment if we stop for a swim.</dd></div>
+        </dl>
+        <p class="practical"><strong>Queroo, Funchal</strong> · pastel de nata masterclass<br><strong>On Tales, Calheta</strong> · sunset whale and dolphin trip on Gringo</p>
         <button class="choose" type="button" data-choice="b">This one: sunset <span aria-hidden="true">→</span></button>
       </div>
     </div>
@@ -361,13 +391,18 @@
       </figure>
     </div>
     <div class="dinner-copy">
-      <p class="body">Everyone arrives for the same 19:30 sitting. We begin outside while the room fills, then watch Filipe and the kitchen turn whatever is growing on the island that week into dinner. A couple of hours later, we step through the hidden door and somehow we are back on a normal street in Funchal.</p>
-      <p class="practical"><strong>Gazebo, Funchal</strong> · one sitting at 19:30 · North to South menu · six courses with wine pairing</p>
+      <p class="body">Gazebo is inside chef Filipe Janeiro's family quinta, behind an unmarked door with a buzzer on an otherwise normal Funchal street. Everyone arrives for the same 19:30 sitting. We begin in the garden, then move into a ten-table room built around the open kitchen.</p>
+      <dl class="detail-ledger">
+        <div><dt>The menu</dt><dd>North to South: six seasonal courses tracing Madeira through the island's produce, with a wine pairing alongside them.</dd></div>
+        <div><dt>The kitchen</dt><dd>Filipe uses produce from the century-old quinta where he can, then works with small local growers and producers for the rest. We can see the team cooking and plating throughout dinner.</dd></div>
+        <div><dt>The reason</dt><dd>This is not a hotel dining room. It is his family's garden and his own small restaurant, now included in the Michelin Guide for its contemporary Madeiran tasting menus.</dd></div>
+      </dl>
+      <p class="practical"><strong>Gazebo</strong> · Rua dos Ilhéus 30, Funchal · Tuesday–Saturday · one sitting at 19:30</p>
       <div class="dinner-food">
-        <figure class="media visual-mask"><img src="img/gazebo-dish-one.jpg" alt="A garden table seen through reflections of tropical leaves" width="900" height="900" loading="lazy" decoding="async"></figure>
+        <figure class="media visual-mask"><img src="img/gazebo-plating.jpg" alt="A seasonal course plated with fruit, herbs and crisp vegetables at Gazebo" width="900" height="900" loading="lazy" decoding="async"></figure>
         <figure class="media visual-mask"><img src="img/gazebo-detail.jpg" alt="A garden-led course served at Gazebo" width="900" height="900" loading="lazy" decoding="async"></figure>
       </div>
-      <p class="personal">Because this feels like the sort of place we would still be talking about years later.</p>
+      <p class="personal">I picked it because the whole evening has a point of view: one arrival time, very few tables, the garden outside and the kitchen right in front of us. It feels intimate without being stiff.</p>
       <button class="choose" type="button" data-choice="c">This one: Gazebo <span aria-hidden="true">→</span></button>
     </div>
   </section>
@@ -499,9 +534,9 @@
   },{passive:true});
 
   var copy={
-    a:{title:'The slow morning.',line:'Laurea it is. One hour side by side, then nowhere else you need to be.',promise:"I will take care of the booking.",section:'#spa',light:'spa'},
-    b:{title:'Sugar, then sunset.',line:'Pastéis first, then the last light from the water.',promise:"I will book the kitchen and the boat.",section:'#sunset',light:'sunset'},
-    c:{title:'The secret garden.',line:'Gazebo at 19:30, with the six-course menu and wine pairing.',promise:"I will take care of the booking.",section:'#dinner',light:'dinner'}
+    a:{title:'The slow morning.',line:'One hour side by side at Laurea, then the pool, sauna, steam room and as much time as we want.',promise:"I will arrange the treatment and spa access.",section:'#spa',light:'spa'},
+    b:{title:'Sugar, then sunset.',line:'We will make the custard, eat the pastéis warm, then take Gringo out from Calheta for two and a half hours.',promise:"I will book the class, the boat and work out the drive.",section:'#sunset',light:'sunset'},
+    c:{title:'The secret garden.',line:'Gazebo at 19:30: six seasonal courses, the wine pairing and the open kitchen in front of us.',promise:"I will reserve the table and the North to South menu.",section:'#dinner',light:'dinner'}
   };
 
   function reveal(choice,focus){
