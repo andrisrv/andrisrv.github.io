@@ -106,22 +106,15 @@
   :where(a,button):focus-visible{outline:3px solid var(--gold);outline-offset:4px;}
 
   /* done */
-  .done{display:none;text-align:center;padding:6rem 1rem 5rem;}
+  .done{display:none;max-width:680px;margin:0 auto;padding:clamp(5rem,12vh,8rem) 0 5rem;text-align:left;}
   .done.on{display:block;}
-  .seal{width:78px;height:78px;margin:0 auto 1.7rem;border-radius:50%;background:rgba(219,92,132,.14);
-    border:1px solid rgba(219,92,132,.4);display:flex;align-items:center;justify-content:center;font-size:31px;
-    animation:pop .55s cubic-bezier(.16,1,.3,1) forwards;}
-  @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
-  .done h2{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:0 0 .9rem;}
-  .done h2 i{font-style:italic;font-weight:400;color:var(--gold);}
-  .done .line{font-size:16.5px;line-height:1.7;color:var(--mist);max-width:420px;margin:0 auto 2rem;}
-  .slip{display:inline-block;text-align:left;background:var(--deep);border:1px solid var(--hair);
-    border-radius:6px;padding:1.2rem 1.6rem;margin-bottom:2rem;}
-  .slip .t{font-family:'Newsreader',serif;font-size:19px;font-weight:600;margin:0 0 .35rem;}
-  .slip .d{font-size:13.5px;color:var(--mist);margin:0;}
-  .undo{font-family:'Caveat',cursive;font-size:20px;color:var(--mist);background:none;border:none;cursor:pointer;
-    text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+  .done-kicker{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 1.25rem;}
+  .done h2{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(42px,7vw,68px);line-height:1;letter-spacing:-.035em;margin:0 0 1.5rem;}
+  .done .line{font-size:18px;line-height:1.7;color:var(--cream);max-width:560px;margin:0 0 2rem;}
+  .done-promise{max-width:560px;border-top:1px solid var(--hair);padding-top:1.25rem;margin:0 0 2.25rem;color:var(--mist);font-size:15px;}
+  .undo{font-family:'Karla',sans-serif;font-size:14px;font-weight:500;color:var(--mist);background:none;border:none;padding:8px 0;cursor:pointer;}
   .undo:hover{color:var(--cream);}
+  .done-sign{font-family:'Caveat',cursive;font-size:22px;color:var(--gold);margin:2.75rem 0 0;}
   .fade{animation:fade .55s ease forwards;}
   @keyframes fade{from{opacity:1}to{opacity:0}}
   .closer{border-top:1px solid var(--hair);margin-top:3rem;padding-top:2rem;font-size:14px;color:var(--mist);
@@ -141,6 +134,8 @@
     .tile{flex:0 0 min(72vw,280px);scroll-snap-align:start;}
     .story{grid-template-columns:1fr;gap:2rem;}
     .pick{width:100%;justify-content:center;min-height:48px;}
+    .done{padding:4rem 0 3rem;}
+    .done h2{font-size:42px;}
   }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise{opacity:1!important;transform:none!important}}
 </style>
@@ -285,16 +280,13 @@
   <p class="closer">Whichever you pick, I've got it from here. — A</p>
 
   <div class="done" id="done" role="status" aria-live="polite">
-    <div class="seal" aria-hidden="true">&#10003;</div>
     <span class="sr-only">Your choice is saved.</span>
+    <p class="done-kicker">You picked</p>
     <h2 id="dt"></h2>
     <p class="line" id="db"></p>
-    <div class="slip">
-      <p class="t" id="st"></p>
-      <p class="d" id="sd"></p>
-    </div>
-    <br>
-    <button class="undo" id="undo" type="button">wait, let me look again</button>
+    <p class="done-promise" id="sd"></p>
+    <button class="undo" id="undo" type="button">&larr; Look at the other two again</button>
+    <p class="done-sign">I've got it from here. — A</p>
   </div>
 
   </div>
@@ -347,23 +339,21 @@
   function copy(c){
     if(c==='a') return {
       h:'The slow morning.',
-      b:"Perfect. I'll sort Laurea and the rest of the day is ours.",
-      t:'Laurea Spa, Savoy Palace',
-      d:"Couple's massage, then as long as we want in the spa"
+      b:'Laurea it is. One hour side by side, then nowhere else you need to be.',
+      d:"I'll take care of the booking."
     };
     if(c==='b'){
       return { h:'Sugar, then sunset.',
-        b:"Perfect. I'll book the kitchen and the boat.",
-        t:'Pastéis de nata + Calheta at sunset', d:'Pastries first, then the last light from the water' };
+        b:'Pastéis first, then the last light from the water.',
+        d:"I'll book the kitchen and the boat." };
     }
-    return { h:'The secret garden.', b:"Perfect. I'll book us the 19:30 and take care of the rest.", t:'Gazebo — North to South', d:'Six courses with wine pairing · 19:30' };
+    return { h:'The secret garden.', b:'Gazebo at 19:30, with the six-course menu and wine pairing.', d:"I'll take care of the booking." };
   }
 
   function reveal(c){
     var x=copy(c);
     document.getElementById('dt').innerHTML=x.h;
     document.getElementById('db').textContent=x.b;
-    document.getElementById('st').textContent=x.t;
     document.getElementById('sd').textContent=x.d;
     document.querySelectorAll('.opt-block').forEach(function(e){e.style.display='none';});
     document.querySelector('.head').style.display='none';
