@@ -85,9 +85,12 @@
   .choice-nav{position:sticky;top:0;z-index:90;display:flex;align-items:center;gap:clamp(.5rem,2.5vw,2.5rem);height:64px;padding:0 var(--page-gutter);background:rgba(7,23,25,.94);border-bottom:1px solid var(--hair)}
   .choice-nav .brand{font-family:'Caveat',cursive;color:var(--candle);font-size:1.25rem;margin-right:auto;white-space:nowrap}
   .choice-nav a{min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;color:var(--cream-soft);font-size:.76rem;font-weight:600;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;position:relative;padding:0 .2rem;transition:color .25s ease}
-  .choice-nav a::after{content:"";position:absolute;left:.2rem;right:.2rem;bottom:6px;height:1px;background:var(--light);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease),background .6s var(--ease)}
+  .choice-nav a[data-for="spa"]{--nav-accent:var(--forest)}
+  .choice-nav a[data-for="sunset"]{--nav-accent:var(--sun)}
+  .choice-nav a[data-for="dinner"]{--nav-accent:var(--candle)}
+  .choice-nav a::after{content:"";position:absolute;left:.2rem;right:.2rem;bottom:6px;height:1px;background:var(--nav-accent);opacity:.42;transform:scaleX(.18);transform-origin:left;transition:transform .45s var(--ease),opacity .25s ease}
   .choice-nav a:hover,.choice-nav a[aria-current="true"]{color:var(--cream)}
-  .choice-nav a[aria-current="true"]::after{transform:scaleX(1)}
+  .choice-nav a[aria-current="true"]::after{opacity:1;transform:scaleX(1)}
 
   .journey-intro{position:relative;isolation:isolate;padding:clamp(6rem,9vw,9rem) var(--page-gutter) clamp(7rem,11vw,11rem);overflow:hidden;background:linear-gradient(135deg,#071719 0%,#09201f 58%,#111e1b 100%)}
   .journey-intro::before{content:"";position:absolute;z-index:-1;width:min(54vw,760px);aspect-ratio:1;right:-14%;top:-38%;border-radius:50%;background:radial-gradient(circle,rgba(232,191,103,.13),rgba(241,154,87,.04) 44%,transparent 70%);pointer-events:none}
@@ -123,13 +126,17 @@
   .enhanced .journey.on .glimpse:nth-child(3){animation-delay:.36s}
   @keyframes introArrive{to{opacity:1;translate:0 0;filter:blur(0)}}
 
-  .chapter{position:relative;min-height:100svh;padding:clamp(5rem,9vw,9rem) var(--page-gutter);overflow:hidden;isolation:isolate;scroll-margin-top:64px}
+  .chapter{--chapter-accent:var(--cream);--chapter-rule:rgba(247,240,227,.28);position:relative;min-height:100svh;padding:clamp(5rem,9vw,9rem) var(--page-gutter);overflow:hidden;isolation:isolate;scroll-margin-top:64px;border-top:5px solid var(--chapter-accent)}
+  .chapter-heading{display:grid;grid-template-columns:minmax(110px,.24fr) minmax(0,1fr);grid-template-rows:auto auto;gap:.6rem clamp(2rem,5vw,5rem);align-items:end;border-top:1px solid var(--chapter-rule);padding-top:clamp(1.8rem,3vw,3rem)}
+  .chapter-index{grid-column:1;grid-row:1 / span 2;align-self:start;font-family:'Newsreader',serif;font-size:clamp(6rem,12vw,11rem);font-weight:400;line-height:.72;letter-spacing:-.065em;color:var(--chapter-accent);font-variant-numeric:lining-nums tabular-nums}
+  .chapter-heading h2,.chapter-heading .promise{grid-column:2}
   .chapter h2{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(3.3rem,7vw,6rem);line-height:.88;letter-spacing:-.04em;margin:0;text-wrap:balance}
   .chapter figure{margin:0}
   .chapter .promise{font-family:'Newsreader',serif;font-size:clamp(1.3rem,2.1vw,1.8rem);line-height:1.35;color:var(--cream);margin:0}
   .chapter p{font-size:1rem;line-height:1.72}
   .practical{font-size:.86rem!important;color:var(--cream-soft);letter-spacing:.01em;margin:0;padding-top:1rem;border-top:1px solid var(--hair)}
   .personal{font-family:'Newsreader',serif;font-size:clamp(1.25rem,2vw,1.55rem)!important;font-style:italic;line-height:1.45!important;color:var(--cream);margin:0}
+  .chapter .choose{color:var(--chapter-accent)}
   .choose{color:var(--cream);margin-top:.2rem}
   .media{margin:0;position:relative;overflow:hidden;background:var(--night-2)}
   .media img{width:100%;height:100%;object-fit:cover}
@@ -143,8 +150,8 @@
   .scene-caption{color:rgba(247,240,227,.58);font-size:.74rem;line-height:1.45;margin-top:.7rem;max-width:54ch}
 
   /* Forest light: leaving the city above, finding the forest below. */
-  .chapter-spa{background:#0a2221;padding-left:0;padding-right:0}
-  .spa-heading{max-width:1240px;margin:0 auto;padding:0 var(--page-gutter) clamp(3rem,6vw,5.5rem)}
+  .chapter-spa{--chapter-accent:#8cbea0;--chapter-rule:rgba(140,190,160,.38);background:radial-gradient(circle at 14% 0%,rgba(140,190,160,.16),transparent 26%),#0a2421;padding-left:0;padding-right:0}
+  .spa-heading{max-width:1240px;margin:0 auto;padding:clamp(1.8rem,3vw,3rem) var(--page-gutter) clamp(3rem,6vw,5.5rem)}
   .spa-heading h2{color:#eff4e9}
   .spa-heading .promise{max-width:680px;margin-top:1.5rem}
   .spa-place{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.32fr) minmax(320px,.68fr);gap:clamp(2.5rem,6vw,6rem);align-items:end;padding:0 var(--page-gutter)}
@@ -170,8 +177,8 @@
   .spa-after-copy .choose{margin-top:1.6rem}
 
   /* Sunset light: the afternoon opens from a kitchen onto the Atlantic. */
-  .chapter-sunset{background:#111c1c;padding-left:0;padding-right:0}
-  .sunset-heading{max-width:1200px;margin:0 auto;padding:0 var(--page-gutter) clamp(2.5rem,5vw,5rem)}
+  .chapter-sunset{--chapter-accent:#f19a57;--chapter-rule:rgba(241,154,87,.42);background:radial-gradient(ellipse at 78% 0%,rgba(241,154,87,.2),transparent 30%),#111d25;padding-left:0;padding-right:0}
+  .sunset-heading{max-width:1200px;margin:0 auto;padding:clamp(1.8rem,3vw,3rem) var(--page-gutter) clamp(2.5rem,5vw,5rem)}
   .sunset-heading h2{max-width:760px}
   .sunset-heading .promise{max-width:650px;margin-top:1.5rem}
   .kitchen-story{max-width:1200px;margin:0 auto;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.72fr);gap:clamp(3rem,8vw,8rem);align-items:center}
@@ -184,7 +191,7 @@
   .pastry-note{max-width:680px;margin:2.2rem auto 0;padding:0 var(--page-gutter);text-align:center;color:var(--cream-soft);line-height:1.72}
   .westward{position:relative;max-width:1440px;margin:clamp(6rem,11vw,10rem) auto 0;padding:0 var(--page-gutter)}
   .westward .media{aspect-ratio:16/6;clip-path:inset(5% 0)}
-  .westward .media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,28,28,.82),rgba(17,28,28,.08) 62%)}
+  .westward .media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,29,37,.84),rgba(17,29,37,.08) 62%)}
   .westward-copy{position:absolute;left:clamp(2rem,8vw,8rem);top:50%;translate:0 -50%;z-index:2;max-width:520px}
   .westward-copy h3{font-size:clamp(3rem,6vw,5.5rem);color:#fff0e2}
   .westward-copy p{color:#f2ded1;max-width:40ch}
@@ -207,8 +214,8 @@
   .sea-ending-copy .choose{margin-top:1.5rem}
 
   /* Candlelight: through the quiet door and into a family room. */
-  .chapter-dinner{background:#101c18;padding-left:0;padding-right:0}
-  .dinner-heading{max-width:1200px;margin:0 auto;padding:0 var(--page-gutter) clamp(3rem,6vw,5.5rem)}
+  .chapter-dinner{--chapter-accent:#e8bf67;--chapter-rule:rgba(232,191,103,.42);background:radial-gradient(circle at 22% 0%,rgba(211,109,125,.14),transparent 24%),radial-gradient(circle at 78% 0%,rgba(232,191,103,.14),transparent 28%),#211914;padding-left:0;padding-right:0}
+  .dinner-heading{max-width:1200px;margin:0 auto;padding:clamp(1.8rem,3vw,3rem) var(--page-gutter) clamp(3rem,6vw,5.5rem)}
   .dinner-heading .promise{margin-top:1.5rem}
   .dinner-heading h2{color:#fff1d3}
   .dinner-arrival{max-width:1200px;margin:0 auto;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.16fr) minmax(320px,.72fr);gap:clamp(3rem,8vw,8rem);align-items:center}
@@ -310,6 +317,8 @@
     .glimpse-caption span{display:none}
     .intro-note{font-size:1.16rem!important;margin-top:1.25rem!important}
     .chapter{min-height:auto;padding-top:5.5rem;padding-bottom:5.5rem}
+    .chapter-heading{grid-template-columns:82px minmax(0,1fr);gap:.45rem 1.25rem;padding-top:1.4rem}
+    .chapter-index{font-size:5.3rem;line-height:.78}
     .chapter h2{font-size:clamp(3.25rem,15vw,4.7rem)}
     .chapter h3{font-size:clamp(2.2rem,10vw,2.8rem)}
     .spa-heading,.sunset-heading,.dinner-heading{padding-bottom:3.2rem}
@@ -332,7 +341,7 @@
     .pastry-note{text-align:left;margin-top:1.5rem}
     .westward{margin-top:5rem;padding:0}
     .westward .media{aspect-ratio:4/5;clip-path:inset(0)}
-    .westward .media::after{background:linear-gradient(180deg,rgba(17,28,28,.08),rgba(17,28,28,.88) 82%)}
+    .westward .media::after{background:linear-gradient(180deg,rgba(17,29,37,.08),rgba(17,29,37,.9) 82%)}
     .westward-copy{left:1rem;right:1rem;top:auto;bottom:2.5rem;translate:0}
     .westward-copy h3{font-size:clamp(3rem,14vw,4.2rem)}
     .gringo-frame{width:100%;aspect-ratio:4/3}
@@ -411,7 +420,8 @@
   </section>
 
   <section class="chapter chapter-spa" id="spa" data-light="spa" aria-labelledby="spaTitle">
-    <header class="spa-heading">
+    <header class="chapter-heading spa-heading">
+      <span class="chapter-index" aria-hidden="true">01</span>
       <h2 id="spaTitle" tabindex="-1">A day at Laurea</h2>
       <p class="promise">A one-hour massage together, followed by as much time in the spa as we want.</p>
     </header>
@@ -464,7 +474,8 @@
   </section>
 
   <section class="chapter chapter-sunset" id="sunset" data-light="sunset" aria-labelledby="sunsetTitle">
-    <header class="sunset-heading">
+    <header class="chapter-heading sunset-heading">
+      <span class="chapter-index" aria-hidden="true">02</span>
       <h2 id="sunsetTitle" tabindex="-1">Pastéis, then sunset</h2>
       <p class="promise">We make pastéis de nata in Funchal, then head west for a sunset trip on the water.</p>
     </header>
@@ -522,7 +533,8 @@
   </section>
 
   <section class="chapter chapter-dinner" id="dinner" data-light="dinner" aria-labelledby="dinnerTitle">
-    <header class="dinner-heading">
+    <header class="chapter-heading dinner-heading">
+      <span class="chapter-index" aria-hidden="true">03</span>
       <h2 id="dinnerTitle" tabindex="-1">The secret garden</h2>
       <p class="promise">A hidden entrance, a drink in the garden, and either six or nine courses beside the open kitchen.</p>
     </header>
