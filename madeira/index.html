@@ -75,9 +75,39 @@
   .choice-nav a:hover,.choice-nav a[aria-current="true"]{color:var(--cream)}
   .choice-nav a[aria-current="true"]::after{transform:scaleX(1)}
 
-  .journey-intro{min-height:68svh;display:grid;align-content:center;padding:clamp(5rem,10vw,10rem) var(--page-gutter);max-width:1200px;margin:0 auto}
-  .journey-intro h1{font-family:'Newsreader',serif;font-size:clamp(3.2rem,8vw,6rem);line-height:.95;letter-spacing:-.04em;font-weight:500;max-width:950px;margin:0 0 2rem;text-wrap:balance}
-  .journey-intro p{font-size:clamp(1rem,1.6vw,1.22rem);line-height:1.75;color:var(--cream-soft);max-width:720px;margin:0}
+  .journey-intro{position:relative;isolation:isolate;padding:clamp(6rem,9vw,9rem) var(--page-gutter) clamp(7rem,11vw,11rem);overflow:hidden;background:linear-gradient(135deg,#071719 0%,#09201f 58%,#111e1b 100%)}
+  .journey-intro::before{content:"";position:absolute;z-index:-1;width:min(54vw,760px);aspect-ratio:1;right:-14%;top:-38%;border-radius:50%;background:radial-gradient(circle,rgba(232,191,103,.13),rgba(241,154,87,.04) 44%,transparent 70%);pointer-events:none}
+  .intro-copy{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.62fr);gap:clamp(3rem,8vw,9rem);align-items:end}
+  .journey-intro h1{font-family:'Newsreader',serif;font-size:clamp(3.8rem,7vw,6rem);line-height:.87;letter-spacing:-.04em;font-weight:500;max-width:780px;margin:0;text-wrap:balance}
+  .journey-intro h1 i{display:block;color:var(--candle);font-weight:400}
+  .journey-intro .intro-copy p{font-size:clamp(1rem,1.35vw,1.15rem);line-height:1.72;color:var(--cream-soft);max-width:43ch;margin:0 0 .25rem}
+  .intro-glimpses{max-width:1240px;margin:clamp(3.5rem,6vw,5.5rem) auto 0;display:grid;grid-template-columns:1.1fr .78fr 1fr;gap:clamp(.8rem,1.7vw,1.5rem);align-items:end}
+  .glimpse{display:block;color:var(--cream);text-decoration:none;position:relative;transition:transform .45s var(--ease)}
+  .glimpse:nth-child(2){margin-bottom:clamp(2rem,5vw,4.5rem)}
+  .glimpse:nth-child(3){margin-bottom:clamp(.3rem,1vw,1rem)}
+  .glimpse .media{aspect-ratio:5/4;clip-path:inset(0 0 0 0 round 5px);transition:clip-path .55s var(--ease),filter .55s var(--ease);filter:saturate(.88) brightness(.9)}
+  .glimpse:nth-child(2) .media{aspect-ratio:4/5}
+  .glimpse img{transition:transform .8s var(--ease)}
+  .glimpse:hover{transform:translateY(-8px)}
+  .glimpse:hover .media{clip-path:inset(1.5% 1.5% 1.5% 1.5% round 5px);filter:saturate(1) brightness(1)}
+  .glimpse:hover img{transform:scale(1.035)}
+  .glimpse-caption{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;align-items:center;padding-top:.9rem;border-top:1px solid currentColor;margin-top:.75rem}
+  .glimpse-caption strong{font-family:'Newsreader',serif;font-size:clamp(1.35rem,2vw,1.8rem);font-weight:500;line-height:1.05}
+  .glimpse-caption small{grid-column:1;color:var(--cream-soft);font-size:.78rem;line-height:1.35}
+  .glimpse-caption span{grid-column:2;grid-row:1 / span 2;font-size:1.1rem;transition:transform .35s var(--ease)}
+  .glimpse:hover .glimpse-caption span{transform:translate(4px,-4px)}
+  .glimpse-spa{color:var(--forest)}
+  .glimpse-sunset{color:var(--sun)}
+  .glimpse-dinner{color:var(--candle)}
+  .glimpse-caption strong{color:var(--cream)}
+  .intro-note{max-width:1240px;margin:1.8rem auto 0!important;color:rgba(247,240,227,.56)!important;font-family:'Caveat',cursive;font-size:1.35rem!important;line-height:1.3!important}
+  .enhanced .intro-copy,.enhanced .glimpse{opacity:0;translate:0 24px;filter:blur(7px)}
+  .enhanced .journey.on .intro-copy{animation:introArrive .75s .05s var(--ease) forwards}
+  .enhanced .journey.on .glimpse{animation:introArrive .78s var(--ease) forwards}
+  .enhanced .journey.on .glimpse:nth-child(1){animation-delay:.18s}
+  .enhanced .journey.on .glimpse:nth-child(2){animation-delay:.27s}
+  .enhanced .journey.on .glimpse:nth-child(3){animation-delay:.36s}
+  @keyframes introArrive{to{opacity:1;translate:0 0;filter:blur(0)}}
 
   .chapter{position:relative;min-height:100svh;padding:clamp(5rem,9vw,9rem) var(--page-gutter);overflow:hidden;isolation:isolate;scroll-margin-top:64px}
   .chapter h2{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(3.3rem,7vw,6rem);line-height:.88;letter-spacing:-.04em;margin:0;text-wrap:balance}
@@ -235,6 +265,11 @@
     .opening-copy{grid-row:1;max-width:720px;padding-left:0}
     .opening-copy h1{font-size:clamp(3.8rem,13vw,6rem)}
     .opening-film{grid-row:2;height:46svh;min-height:360px;margin-top:1rem}
+    .intro-copy{grid-template-columns:1fr;gap:2rem}
+    .intro-copy p{max-width:58ch!important}
+    .intro-glimpses{grid-template-columns:1.12fr .88fr;align-items:start}
+    .glimpse:nth-child(2){margin:3rem 0 0}
+    .glimpse:nth-child(3){grid-column:1 / -1;width:62%;margin:-1rem 0 0 auto}
     .chapter-spa{grid-template-columns:1fr;grid-template-rows:auto auto auto}
     .spa-heading{grid-column:1;grid-row:1;max-width:720px}
     .spa-visual{grid-column:1;grid-row:2;min-height:620px}
@@ -265,8 +300,21 @@
     .choice-nav{height:60px;gap:.35rem;padding:0 .75rem}
     .choice-nav .brand{font-size:1rem;margin-right:auto}
     .choice-nav a{font-size:.66rem;letter-spacing:.055em;min-width:54px;justify-content:center;padding:0 .2rem}
-    .journey-intro{min-height:60svh;padding-top:4.5rem;padding-bottom:4.5rem}
-    .journey-intro h1{font-size:clamp(3.25rem,15vw,4.6rem)}
+    .journey-intro{padding-top:4.5rem;padding-bottom:5.5rem}
+    .journey-intro::before{width:130vw;right:-64%;top:-12%}
+    .journey-intro h1{font-size:clamp(3rem,13.5vw,4.65rem)}
+    .journey-intro .intro-copy p{font-size:1rem;line-height:1.62}
+    .intro-glimpses{grid-template-columns:1.16fr .84fr;gap:.65rem;margin-top:2.8rem}
+    .glimpse:nth-child(2){margin-top:2.4rem}
+    .glimpse:nth-child(3){width:72%;margin:-.3rem 0 0 auto}
+    .glimpse .media{aspect-ratio:4/5}
+    .glimpse:nth-child(2) .media{aspect-ratio:1/1.22}
+    .glimpse:nth-child(3) .media{aspect-ratio:16/10}
+    .glimpse-caption{display:block;padding-top:.6rem;margin-top:.5rem}
+    .glimpse-caption strong{display:block;font-size:1.2rem}
+    .glimpse-caption small{display:block;margin-top:.25rem;font-size:.69rem}
+    .glimpse-caption span{display:none}
+    .intro-note{font-size:1.16rem!important;margin-top:1.25rem!important}
     .chapter{min-height:auto;padding-top:5.5rem;padding-bottom:5.5rem}
     .chapter h2{font-size:clamp(3.25rem,15vw,4.7rem)}
     .chapter-spa{display:flex;flex-direction:column;gap:2.5rem}
@@ -329,6 +377,7 @@
     .opening-film img{transform:none}
     .opening-film::after{transform:scaleX(1)}
     .enhanced .visual-mask{clip-path:inset(0)!important;filter:none!important}
+    .enhanced .intro-copy,.enhanced .glimpse{opacity:1;translate:none;filter:none}
     .light-thread span{will-change:auto}
   }
 </style>
@@ -360,8 +409,25 @@
   </nav>
 
   <section class="journey-intro" aria-labelledby="journeyTitle">
-    <h1 id="journeyTitle" tabindex="-1">Three kinds of Madeira light.</h1>
-    <p>One is a seriously good spa day. One starts with us making pastéis de nata and ends on a boat at sunset. One is a tiny restaurant hidden inside an old family home. Here is what each one would actually be like.</p>
+    <div class="intro-copy">
+      <h1 id="journeyTitle" tabindex="-1">Three kinds of <i>Madeira light.</i></h1>
+      <p>One is a seriously good spa day. One starts with us making pastéis de nata and ends on a boat at sunset. One is a tiny restaurant hidden inside an old family home. Here is what each one would actually be like.</p>
+    </div>
+    <div class="intro-glimpses" aria-label="A first look at the three gift options">
+      <a class="glimpse glimpse-spa" href="#spa" aria-label="Go to the Laurea spa option">
+        <figure class="media"><img src="img/spa-pool.jpg" alt="The warm indoor lagoon pool at Laurea Spa" width="1400" height="700" decoding="async"></figure>
+        <div class="glimpse-caption"><strong>A day at Laurea</strong><small>Massage · spa circuit · no rush</small><span aria-hidden="true">↘</span></div>
+      </a>
+      <a class="glimpse glimpse-sunset" href="#sunset" aria-label="Go to the pastéis and sunset boat option">
+        <figure class="media"><img src="img/boat-gringo.jpg" alt="Gringo, the On Tales yacht, anchored off Madeira" width="1400" height="787" loading="lazy" decoding="async"></figure>
+        <div class="glimpse-caption"><strong>Pastéis, then sunset</strong><small>Make · taste · sail</small><span aria-hidden="true">↘</span></div>
+      </a>
+      <a class="glimpse glimpse-dinner" href="#dinner" aria-label="Go to the Gazebo dinner option">
+        <figure class="media"><img src="img/gazebo-exterior.jpg" alt="Wine glasses waiting in Gazebo's tropical garden" width="900" height="900" loading="lazy" decoding="async"></figure>
+        <div class="glimpse-caption"><strong>The secret garden</strong><small>Hidden door · six or nine courses</small><span aria-hidden="true">↘</span></div>
+      </a>
+    </div>
+    <p class="intro-note">Start wherever your eye goes first.</p>
   </section>
 
   <section class="chapter chapter-spa" id="spa" data-light="spa" aria-labelledby="spaTitle">
