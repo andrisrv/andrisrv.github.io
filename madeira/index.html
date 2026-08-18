@@ -227,20 +227,6 @@
   .dinner-food .media:first-child img{object-position:center}
   .dinner-food .media:last-child{aspect-ratio:1/1;clip-path:inset(10% 0)}
 
-  .closing{padding:clamp(5rem,9vw,8rem) var(--page-gutter);background:#071719}
-  .closing-inner{max-width:1180px;margin:0 auto}
-  .closing h2{font-family:'Newsreader',serif;font-size:clamp(2.8rem,5vw,4.8rem);font-weight:500;letter-spacing:-.04em;line-height:.95;margin:0 0 1rem}
-  .closing-intro{font-size:1rem;line-height:1.65;color:var(--cream-soft);margin:0 0 3rem}
-  .closing-list{border-top:1px solid var(--hair)}
-  .closing-row{display:grid;grid-template-columns:minmax(260px,1.35fr) minmax(220px,1fr) minmax(150px,.72fr) auto;align-items:center;gap:clamp(1rem,3vw,3rem);min-height:96px;padding:1.2rem 0;border-bottom:1px solid var(--hair);color:var(--cream);text-decoration:none;transition:color .2s ease,transform .35s var(--ease)}
-  .closing-row:hover{color:var(--light);transform:translateX(.75rem)}
-  .closing-main{display:flex;flex-direction:column;gap:.3rem}
-  .closing-main strong{font-family:'Newsreader',serif;font-size:1.45rem;font-weight:500;line-height:1.15}
-  .closing-main em{color:var(--cream-soft);font-size:.78rem;font-style:normal;letter-spacing:.08em;text-transform:uppercase}
-  .closing-detail,.closing-time{color:var(--cream-soft);font-size:.9rem;line-height:1.45}
-  .closing-arrow{font-size:1.15rem}
-  .closing-note{font-family:'Caveat',cursive;color:var(--candle);font-size:1.5rem;margin:2.5rem 0 0}
-
   /* The selected light becomes the invitation. */
   .chosen{min-height:100svh;position:relative;isolation:isolate;overflow:hidden;background:#071719}
   .chosen-bg{position:absolute;inset:0;opacity:0;transition:opacity .65s ease;z-index:-2}
@@ -361,14 +347,6 @@
     .chosen-bg::after{background:linear-gradient(180deg,rgba(7,23,25,.5),rgba(7,23,25,.9) 58%,rgba(7,23,25,.98))}
     .chosen-note{justify-content:flex-end;padding-bottom:4rem}
     .chosen h1{font-size:clamp(3.8rem,17vw,5rem)}
-    .closing{padding-top:4.5rem;padding-bottom:4.5rem}
-    .closing-intro{margin-bottom:2rem}
-    .closing-row{grid-template-columns:1fr auto;gap:.65rem 1rem;padding:1.35rem 0;min-height:0}
-    .closing-main{grid-column:1 / -1;padding-right:2rem}
-    .closing-detail{grid-column:1}
-    .closing-time{grid-column:1;color:rgba(247,240,227,.62)}
-    .closing-arrow{grid-column:2;grid-row:2 / span 2;align-self:center}
-    .closing-row:hover{transform:none}
   }
 
   @media(prefers-reduced-motion:reduce){
@@ -583,33 +561,6 @@
     </div>
   </section>
 
-  <footer class="closing" aria-labelledby="shortVersion">
-    <div class="closing-inner">
-      <h2 id="shortVersion">If you want the short version:</h2>
-      <p class="closing-intro">This is probably the easiest way to choose.</p>
-      <div class="closing-list">
-        <a class="closing-row" href="#spa" aria-label="Go back to the Laurea spa option">
-          <span class="closing-main"><strong>If you want a proper spa day</strong><em>Laurea</em></span>
-          <span class="closing-detail">Couples massage + full spa</span>
-          <span class="closing-time">Late morning onward</span>
-          <span class="closing-arrow" aria-hidden="true">↑</span>
-        </a>
-        <a class="closing-row" href="#sunset" aria-label="Go back to the pastéis and sunset boat option">
-          <span class="closing-main"><strong>If you want to make something and go somewhere</strong><em>Pastéis + boat</em></span>
-          <span class="closing-detail">Cooking class + 2.5 hours on the water</span>
-          <span class="closing-time">Afternoon to sunset</span>
-          <span class="closing-arrow" aria-hidden="true">↑</span>
-        </a>
-        <a class="closing-row" href="#dinner" aria-label="Go back to the Gazebo dinner option">
-          <span class="closing-main"><strong>If you want dinner to be the whole evening</strong><em>Gazebo</em></span>
-          <span class="closing-detail">Six or nine courses + wine pairing</span>
-          <span class="closing-time">Whichever sitting works best</span>
-          <span class="closing-arrow" aria-hidden="true">↑</span>
-        </a>
-      </div>
-      <p class="closing-note">Once you choose, I'll handle the booking. — Andris</p>
-    </div>
-  </footer>
 </main>
 
 <section class="chosen" id="chosen" hidden>
@@ -673,17 +624,6 @@
 
   var chapters=Array.from(document.querySelectorAll('.chapter'));
   var navLinks=Array.from(document.querySelectorAll('.choice-nav a'));
-  document.querySelectorAll('.closing-row').forEach(function(link){
-    link.addEventListener('click',function(event){
-      var chapter=document.querySelector(link.getAttribute('href'));
-      if(!chapter) return;
-      event.preventDefault();
-      var top=chapter.getBoundingClientRect().top+window.scrollY-64;
-      window.scrollTo({top:Math.max(0,top),behavior:'instant'});
-      var heading=chapter.querySelector('h2');
-      if(heading) requestAnimationFrame(function(){heading.focus({preventScroll:true});});
-    });
-  });
   var observer=new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(!entry.isIntersecting) return;
