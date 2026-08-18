@@ -79,7 +79,7 @@
   .journey-intro h1{font-family:'Newsreader',serif;font-size:clamp(3.2rem,8vw,6rem);line-height:.95;letter-spacing:-.04em;font-weight:500;max-width:950px;margin:0 0 2rem;text-wrap:balance}
   .journey-intro p{font-size:clamp(1rem,1.6vw,1.22rem);line-height:1.75;color:var(--cream-soft);max-width:720px;margin:0}
 
-  .chapter{position:relative;min-height:100svh;padding:clamp(5rem,9vw,9rem) var(--page-gutter);overflow:hidden;isolation:isolate}
+  .chapter{position:relative;min-height:100svh;padding:clamp(5rem,9vw,9rem) var(--page-gutter);overflow:hidden;isolation:isolate;scroll-margin-top:64px}
   .chapter h2{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(3.3rem,7vw,6rem);line-height:.88;letter-spacing:-.04em;margin:0;text-wrap:balance}
   .chapter .promise{font-family:'Newsreader',serif;font-size:clamp(1.3rem,2.1vw,1.8rem);line-height:1.35;color:var(--cream);margin:0}
   .chapter p{font-size:1rem;line-height:1.72}
@@ -148,9 +148,19 @@
   .dinner-food .media:first-child img{object-position:left center;transform:scale(1.38);transform-origin:left center}
   .dinner-food .media:last-child{aspect-ratio:1/1;clip-path:inset(10% 0)}
 
-  .closing{padding:clamp(6rem,12vw,11rem) var(--page-gutter);display:flex;justify-content:center;text-align:center;background:#071719}
-  .closing p{font-family:'Newsreader',serif;font-size:clamp(2rem,5vw,4.7rem);letter-spacing:-.035em;line-height:1.05;max-width:880px;margin:0;text-wrap:balance}
-  .closing i{display:block;color:var(--candle);font-weight:400;margin-top:.7rem}
+  .closing{padding:clamp(5rem,9vw,8rem) var(--page-gutter);background:#071719}
+  .closing-inner{max-width:1180px;margin:0 auto}
+  .closing h2{font-family:'Newsreader',serif;font-size:clamp(2.8rem,5vw,4.8rem);font-weight:500;letter-spacing:-.04em;line-height:.95;margin:0 0 1rem}
+  .closing-intro{font-size:1rem;line-height:1.65;color:var(--cream-soft);margin:0 0 3rem}
+  .closing-list{border-top:1px solid var(--hair)}
+  .closing-row{display:grid;grid-template-columns:minmax(260px,1.35fr) minmax(220px,1fr) minmax(150px,.72fr) auto;align-items:center;gap:clamp(1rem,3vw,3rem);min-height:96px;padding:1.2rem 0;border-bottom:1px solid var(--hair);color:var(--cream);text-decoration:none;transition:color .2s ease,padding .35s var(--ease)}
+  .closing-row:hover{color:var(--light);padding-left:.75rem}
+  .closing-main{display:flex;flex-direction:column;gap:.3rem}
+  .closing-main strong{font-family:'Newsreader',serif;font-size:1.45rem;font-weight:500;line-height:1.15}
+  .closing-main em{color:var(--cream-soft);font-size:.78rem;font-style:normal;letter-spacing:.08em;text-transform:uppercase}
+  .closing-detail,.closing-time{color:var(--cream-soft);font-size:.9rem;line-height:1.45}
+  .closing-arrow{font-size:1.15rem}
+  .closing-note{font-family:'Caveat',cursive;color:var(--candle);font-size:1.5rem;margin:2.5rem 0 0}
 
   /* The selected light becomes the invitation. */
   .chosen{min-height:100svh;position:relative;isolation:isolate;overflow:hidden;background:#071719}
@@ -231,6 +241,14 @@
     .chosen-bg::after{background:linear-gradient(180deg,rgba(7,23,25,.5),rgba(7,23,25,.9) 58%,rgba(7,23,25,.98))}
     .chosen-note{justify-content:flex-end;padding-bottom:4rem}
     .chosen h1{font-size:clamp(3.8rem,17vw,5rem)}
+    .closing{padding-top:4.5rem;padding-bottom:4.5rem}
+    .closing-intro{margin-bottom:2rem}
+    .closing-row{grid-template-columns:1fr auto;gap:.65rem 1rem;padding:1.35rem 0;min-height:0}
+    .closing-main{grid-column:1 / -1;padding-right:2rem}
+    .closing-detail{grid-column:1}
+    .closing-time{grid-column:1;color:rgba(247,240,227,.62)}
+    .closing-arrow{grid-column:2;grid-row:2 / span 2;align-self:center}
+    .closing-row:hover{padding-left:0}
   }
 
   @media(prefers-reduced-motion:reduce){
@@ -276,7 +294,7 @@
 
   <section class="chapter chapter-spa" id="spa" data-light="spa" aria-labelledby="spaTitle">
     <header class="spa-heading">
-      <h2 id="spaTitle">The slow morning</h2>
+      <h2 id="spaTitle" tabindex="-1">The slow morning</h2>
       <p class="promise">A sixty-minute massage together, then nowhere else we need to be.</p>
     </header>
     <div class="spa-visual">
@@ -303,7 +321,7 @@
 
   <section class="chapter chapter-sunset" id="sunset" data-light="sunset" aria-labelledby="sunsetTitle">
     <header class="sunset-heading">
-      <h2 id="sunsetTitle">Sugar, then sunset</h2>
+      <h2 id="sunsetTitle" tabindex="-1">Sugar, then sunset</h2>
       <p class="promise">Pastéis still warm from the oven, then the last light from the water.</p>
     </header>
     <div class="route" aria-label="The plan for the day">
@@ -331,7 +349,7 @@
 
   <section class="chapter chapter-dinner" id="dinner" data-light="dinner" aria-labelledby="dinnerTitle">
     <header class="dinner-heading">
-      <h2 id="dinnerTitle">The secret garden</h2>
+      <h2 id="dinnerTitle" tabindex="-1">The secret garden</h2>
       <p class="promise">An unmarked door, a drink in the garden, and six courses beside the open kitchen.</p>
     </header>
     <div class="door-composition">
@@ -354,8 +372,32 @@
     </div>
   </section>
 
-  <footer class="closing">
-    <p>Whichever light you choose, <i>I've got it from here. — Andris</i></p>
+  <footer class="closing" aria-labelledby="shortVersion">
+    <div class="closing-inner">
+      <h2 id="shortVersion">If you want the short version:</h2>
+      <p class="closing-intro">Pick by the kind of day you feel like having.</p>
+      <div class="closing-list">
+        <a class="closing-row" href="#spa" aria-label="Go back to the Laurea spa option">
+          <span class="closing-main"><strong>For doing absolutely nothing</strong><em>Laurea</em></span>
+          <span class="closing-detail">Couples massage + full spa</span>
+          <span class="closing-time">Late morning onward</span>
+          <span class="closing-arrow" aria-hidden="true">↑</span>
+        </a>
+        <a class="closing-row" href="#sunset" aria-label="Go back to the pastéis and sunset boat option">
+          <span class="closing-main"><strong>For making a day of it</strong><em>Pastéis + boat</em></span>
+          <span class="closing-detail">Cooking class + 2.5 hours on the water</span>
+          <span class="closing-time">Afternoon to sunset</span>
+          <span class="closing-arrow" aria-hidden="true">↑</span>
+        </a>
+        <a class="closing-row" href="#dinner" aria-label="Go back to the Gazebo dinner option">
+          <span class="closing-main"><strong>For one unforgettable evening</strong><em>Gazebo</em></span>
+          <span class="closing-detail">Six courses + wine pairing</span>
+          <span class="closing-time">19:30</span>
+          <span class="closing-arrow" aria-hidden="true">↑</span>
+        </a>
+      </div>
+      <p class="closing-note">Once you choose, I'll handle the booking. — Andris</p>
+    </div>
   </footer>
 </main>
 
@@ -420,6 +462,17 @@
 
   var chapters=Array.from(document.querySelectorAll('.chapter'));
   var navLinks=Array.from(document.querySelectorAll('.choice-nav a'));
+  document.querySelectorAll('.closing-row').forEach(function(link){
+    link.addEventListener('click',function(event){
+      var chapter=document.querySelector(link.getAttribute('href'));
+      if(!chapter) return;
+      event.preventDefault();
+      var top=chapter.getBoundingClientRect().top+window.scrollY-64;
+      window.scrollTo({top:Math.max(0,top),behavior:'instant'});
+      var heading=chapter.querySelector('h2');
+      if(heading) requestAnimationFrame(function(){heading.focus({preventScroll:true});});
+    });
+  });
   var observer=new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(!entry.isIntersecting) return;
