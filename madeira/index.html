@@ -97,43 +97,56 @@
   .chapter-spa{background:#0a2221;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);grid-template-rows:auto 1fr;gap:clamp(2rem,5vw,5rem)}
   .spa-heading{grid-column:2;align-self:end;position:relative;z-index:3}
   .spa-heading h2{color:#eff4e9}
+  .spa-heading .promise{margin-top:1.4rem}
   .spa-visual{grid-column:1;grid-row:1 / span 2;min-height:720px;position:relative}
   .spa-main{height:86%;width:88%;clip-path:inset(13% 0 13% 0);box-shadow:0 24px 60px rgba(0,0,0,.26)}
   .spa-main img{object-position:50% center}
-  .spa-detail{position:absolute;width:43%;height:40%;right:0;bottom:0;border:10px solid #0a2221;clip-path:inset(18% 0)}
+  .spa-slice{position:absolute;width:29%;height:34%;right:0;top:5%;border:9px solid #0a2221;clip-path:inset(0 18%)}
+  .spa-slice img{object-position:18% center}
+  .spa-detail{position:absolute;width:39%;height:36%;right:0;bottom:0;border:9px solid #0a2221;clip-path:inset(18% 0)}
   .spa-story{grid-column:2;display:flex;flex-direction:column;gap:1.35rem;align-self:start;max-width:460px}
   .spa-story .body{color:#c9d7ca;margin:0}
+  .spa-rest{width:100%;aspect-ratio:16/7;clip-path:inset(12% 0)}
+  .spa-rest img{object-position:center 58%}
 
-  /* Sunset light: a horizon and lateral movement. */
+  /* Sunset light: three scenes moving west. */
   .chapter-sunset{background:#111c1c;padding-left:0;padding-right:0}
-  .sunset-stage{min-height:78svh;display:grid;align-items:end;position:relative;overflow:hidden}
-  .sunset-main{position:absolute;inset:0;clip-path:polygon(0 48%,100% 48%,100% 52%,0 52%)}
-  .sunset-main::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,23,25,.72) 0%,rgba(7,23,25,.1) 55%,rgba(7,23,25,.46) 100%)}
-  .sunset-main img{object-position:50% 60%}
-  .sunset-copy{position:relative;z-index:2;padding:clamp(2rem,6vw,6rem) var(--page-gutter);max-width:760px}
-  .sunset-copy h2{max-width:680px}
-  .sunset-copy .promise{max-width:610px;margin-top:1.5rem}
-  .route{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:1200px;margin:0 auto;padding:clamp(2.5rem,5vw,5rem) var(--page-gutter) 0;position:relative}
-  .route::before{content:"";position:absolute;left:var(--page-gutter);right:var(--page-gutter);top:calc(clamp(2.5rem,5vw,5rem) + 4px);height:1px;background:linear-gradient(90deg,var(--cream-soft),var(--sun))}
-  .route-stop{padding:1.6rem clamp(1rem,3vw,2.5rem) 0 0;position:relative}
-  .route-stop::before{content:"";position:absolute;width:9px;height:9px;border:2px solid var(--sun);background:#111c1c;top:0;border-radius:50%}
+  .sunset-heading{max-width:1200px;margin:0 auto;padding:0 var(--page-gutter) clamp(2.5rem,5vw,5rem)}
+  .sunset-heading h2{max-width:760px}
+  .sunset-heading .promise{max-width:650px;margin-top:1.5rem}
+  .route{display:grid;grid-template-columns:1fr .78fr 1.16fr;gap:clamp(1rem,2.5vw,2.5rem);max-width:1320px;margin:0 auto;padding:0 var(--page-gutter);position:relative;align-items:start}
+  .route-stop{position:relative}
+  .route-stop:nth-child(2){margin-top:clamp(3rem,7vw,7rem)}
+  .route-stop:nth-child(3){margin-top:clamp(1rem,3vw,3rem)}
+  .route-image{width:100%;margin-bottom:1.5rem;clip-path:inset(0 8%)}
+  .route-stop:nth-child(1) .route-image{aspect-ratio:4/3}
+  .route-stop:nth-child(2) .route-image{aspect-ratio:1/1}
+  .route-stop:nth-child(3) .route-image{aspect-ratio:16/10}
+  .route-copy{border-top:1px solid var(--sun);padding-top:1.1rem;position:relative}
+  .route-copy::before{content:"";position:absolute;width:9px;height:9px;border:2px solid var(--sun);background:#111c1c;top:-6px;left:0;border-radius:50%}
   .route-stop strong{display:block;color:var(--cream);font-weight:600;margin-bottom:.45rem}
   .route-stop p{color:var(--cream-soft);margin:0;max-width:27ch}
-  .sunset-bottom{max-width:1200px;margin:0 auto;padding:clamp(2.5rem,5vw,4rem) var(--page-gutter) 0;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,7vw,7rem);align-items:end}
+  .sunset-bottom{max-width:1200px;margin:0 auto;padding:clamp(3.5rem,7vw,6rem) var(--page-gutter) 0;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,7vw,7rem);align-items:end}
   .sunset-bottom .personal{max-width:560px}
   .sunset-action{display:flex;flex-direction:column;gap:1rem;align-items:flex-start}
 
   /* Candlelight: narrow, vertical and private. */
   .chapter-dinner{background:#101c18;display:grid;grid-template-columns:minmax(290px,.72fr) minmax(0,1.28fr);gap:clamp(3rem,8vw,9rem);align-items:center}
-  .door-composition{height:min(78svh,820px);position:relative;display:flex;justify-content:center}
+  .dinner-heading{grid-column:2;align-self:end}
+  .dinner-heading .promise{margin-top:1.5rem}
+  .door-composition{grid-column:1;grid-row:1 / span 2;height:min(78svh,820px);position:relative;display:flex;justify-content:center}
   .dinner-main{height:100%;width:min(78%,520px);clip-path:inset(0 42% 0 42%);box-shadow:0 28px 72px rgba(0,0,0,.34)}
   .dinner-main img{object-position:center}
   .dinner-detail{position:absolute;right:0;bottom:7%;width:42%;height:32%;border:9px solid #101c18;clip-path:inset(0 32%)}
-  .dinner-copy{max-width:660px;display:flex;flex-direction:column;gap:1.5rem}
-  .dinner-copy h2{color:#fff1d3}
+  .dinner-copy{grid-column:2;max-width:660px;display:flex;flex-direction:column;gap:1.5rem}
+  .dinner-heading h2{color:#fff1d3}
   .dinner-copy .body{max-width:590px;color:#d7d1be;margin:0}
   .dinner-copy .practical{max-width:510px}
   .dinner-copy .personal{max-width:580px}
+  .dinner-food{display:grid;grid-template-columns:.78fr 1.22fr;gap:.65rem;margin:.35rem 0}
+  .dinner-food .media:first-child{aspect-ratio:4/5;clip-path:inset(0 12%)}
+  .dinner-food .media:first-child img{object-position:left center;transform:scale(1.38);transform-origin:left center}
+  .dinner-food .media:last-child{aspect-ratio:1/1;clip-path:inset(10% 0)}
 
   .closing{padding:clamp(6rem,12vw,11rem) var(--page-gutter);display:flex;justify-content:center;text-align:center;background:#071719}
   .closing p{font-family:'Newsreader',serif;font-size:clamp(2rem,5vw,4.7rem);letter-spacing:-.035em;line-height:1.05;max-width:880px;margin:0;text-wrap:balance}
@@ -167,7 +180,10 @@
     .spa-heading{grid-column:1;grid-row:1;max-width:720px}
     .spa-visual{grid-column:1;grid-row:2;min-height:620px}
     .spa-story{grid-column:1;grid-row:3;max-width:720px}
-    .chapter-dinner{grid-template-columns:.8fr 1.2fr;gap:3rem}
+    .chapter-dinner{grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:3rem}
+    .dinner-heading{grid-column:1;grid-row:1;max-width:720px}
+    .door-composition{grid-column:1;grid-row:2;height:min(72svh,720px)}
+    .dinner-copy{grid-column:1;grid-row:3;max-width:720px}
   }
 
   @media(max-width:640px){
@@ -185,29 +201,33 @@
     .choice-nav{height:60px;gap:.35rem;padding:0 .75rem}
     .choice-nav .brand{font-size:1rem;margin-right:auto}
     .choice-nav a{font-size:.66rem;letter-spacing:.055em;min-width:54px;justify-content:center;padding:0 .2rem}
-    .journey-intro{min-height:72svh;padding-top:5rem;padding-bottom:5rem}
+    .journey-intro{min-height:60svh;padding-top:4.5rem;padding-bottom:4.5rem}
     .journey-intro h1{font-size:clamp(3.25rem,15vw,4.6rem)}
     .chapter{min-height:auto;padding-top:5.5rem;padding-bottom:5.5rem}
     .chapter h2{font-size:clamp(3.25rem,15vw,4.7rem)}
     .chapter-spa{display:flex;flex-direction:column;gap:2.5rem}
-    .spa-visual{min-height:480px;width:calc(100% + 1rem)}
-    .spa-main{height:88%;width:94%;clip-path:inset(10% 0)}
-    .spa-detail{width:49%;height:34%;border-width:7px}
+    .spa-visual{min-height:0;width:100%;display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:auto 155px;gap:.5rem}
+    .spa-main{grid-column:1 / -1;position:relative;width:100%;height:auto;aspect-ratio:4/3;clip-path:inset(8% 0);box-shadow:none}
+    .spa-slice,.spa-detail{position:relative;inset:auto;width:100%;height:155px;border:0}
+    .spa-slice{grid-column:1;clip-path:inset(0 8%)}
+    .spa-detail{grid-column:2;clip-path:inset(8% 0)}
     .spa-story{gap:1.2rem}
-    .sunset-stage{min-height:78svh}
-    .sunset-copy{align-self:end;padding-bottom:2.5rem}
-    .sunset-copy h2{font-size:clamp(3.7rem,17vw,5rem)}
-    .sunset-main img{object-position:58% center}
-    .route{grid-template-columns:1fr;padding-top:3rem;gap:0}
-    .route::before{top:3rem;bottom:0;left:calc(var(--page-gutter) + 4px);right:auto;width:1px;height:auto;background:linear-gradient(var(--cream-soft),var(--sun))}
-    .route-stop{padding:0 0 1.8rem 2rem}
-    .route-stop::before{left:0;top:.42rem}
+    .spa-rest{aspect-ratio:16/8}
+    .sunset-heading{padding-bottom:2.8rem}
+    .sunset-heading h2{font-size:clamp(3.7rem,17vw,5rem)}
+    .route{grid-template-columns:1fr;gap:2.8rem}
+    .route-stop:nth-child(2),.route-stop:nth-child(3){margin-top:0}
+    .route-stop:nth-child(2) .route-image{width:72%;margin-left:auto}
+    .route-stop:nth-child(3) .route-image{width:calc(100% + 1rem)}
+    .route-image{margin-bottom:1rem}
+    .route-copy{border-top:0;border-left:1px solid var(--sun);padding:0 0 0 1.7rem}
+    .route-copy::before{top:.4rem;left:-6px}
     .sunset-bottom{grid-template-columns:1fr;padding-top:1.8rem}
     .chapter-dinner{display:flex;flex-direction:column;align-items:stretch;gap:3rem}
-    .door-composition{height:70svh;min-height:540px;order:1}
+    .door-composition{height:64svh;min-height:480px}
     .dinner-main{width:83%}
     .dinner-detail{width:46%;height:27%;border-width:7px}
-    .dinner-copy{order:2}
+    .dinner-food{grid-template-columns:.8fr 1.2fr}
     .chosen-bg::after{background:linear-gradient(180deg,rgba(7,23,25,.5),rgba(7,23,25,.9) 58%,rgba(7,23,25,.98))}
     .chosen-note{justify-content:flex-end;padding-bottom:4rem}
     .chosen h1{font-size:clamp(3.8rem,17vw,5rem)}
@@ -257,38 +277,48 @@
   <section class="chapter chapter-spa" id="spa" data-light="spa" aria-labelledby="spaTitle">
     <header class="spa-heading">
       <h2 id="spaTitle">The slow morning</h2>
+      <p class="promise">A sixty-minute massage together, then nowhere else we need to be.</p>
     </header>
     <div class="spa-visual">
       <figure class="media visual-mask spa-main">
         <img src="img/spa-pool.jpg" alt="The warm lagoon pool and waterfalls inside Laurea Spa" width="1400" height="700" decoding="async">
+      </figure>
+      <figure class="media visual-mask spa-slice">
+        <img src="img/spa-waterfall.jpg" alt="The quiet relaxation area inside Laurea Spa" width="600" height="600" loading="lazy" decoding="async">
       </figure>
       <figure class="media visual-mask spa-detail">
         <img src="img/spa-treatment-room.jpg" alt="The candlelit couples treatment room at Laurea Spa" width="600" height="600" loading="lazy" decoding="async">
       </figure>
     </div>
     <div class="spa-story">
-      <p class="promise">A sixty-minute massage together, then nowhere else we need to be.</p>
       <p class="body">We arrive late morning and disappear into the same treatment room for an hour. After that, we can move slowly through the steam room, sauna and salt room, or do absolutely nothing by the warm pool. When we are ready, we walk back into Funchal and find dinner.</p>
       <p class="practical"><strong>Laurea Spa, Savoy Palace</strong> · couples massage · full spa access · open daily, 10:00–20:00</p>
+      <figure class="media visual-mask spa-rest">
+        <img src="img/spa-lounge.jpg" alt="Warm loungers beside the illuminated salt wall at Laurea Spa" width="600" height="600" loading="lazy" decoding="async">
+      </figure>
       <p class="personal">Because you love spas and experiences that feel out of the ordinary, and this is the most incredible spa I could find in Madeira, designed around the island's Laurissilva forest.</p>
       <button class="choose" type="button" data-choice="a">This one: Laurea <span aria-hidden="true">→</span></button>
     </div>
   </section>
 
   <section class="chapter chapter-sunset" id="sunset" data-light="sunset" aria-labelledby="sunsetTitle">
-    <div class="sunset-stage">
-      <figure class="media visual-mask sunset-main">
-        <img src="img/boat-dolphins.jpg" alt="A dolphin breaking the surface beside the boat off Madeira" width="1024" height="683" decoding="async">
-      </figure>
-      <header class="sunset-copy">
-        <h2 id="sunsetTitle">Sugar, then sunset</h2>
-        <p class="promise">Pastéis still warm from the oven, then the last light from the water.</p>
-      </header>
-    </div>
+    <header class="sunset-heading">
+      <h2 id="sunsetTitle">Sugar, then sunset</h2>
+      <p class="promise">Pastéis still warm from the oven, then the last light from the water.</p>
+    </header>
     <div class="route" aria-label="The plan for the day">
-      <div class="route-stop"><strong>Funchal</strong><p>We make the custard, fill the pastry shells and eat them while they are still too hot.</p></div>
-      <div class="route-stop"><strong>The coast road</strong><p>We head west for Calheta. The drive is part of the day, not dead time between things.</p></div>
-      <div class="route-stop"><strong>The Atlantic</strong><p>Two and a half hours on a small boat until the light goes. Dolphins would be a bonus.</p></div>
+      <article class="route-stop">
+        <figure class="media visual-mask route-image"><img src="img/pastry-finished.jpg" alt="Custard being whisked during the pastéis de nata class" width="600" height="600" loading="lazy" decoding="async"></figure>
+        <div class="route-copy"><strong>In the kitchen</strong><p>We make the custard and fill the pastry shells ourselves.</p></div>
+      </article>
+      <article class="route-stop">
+        <figure class="media visual-mask route-image"><img src="img/pastry-class.jpg" alt="Fresh pastéis de nata beside a glass of Madeira wine" width="600" height="600" loading="lazy" decoding="async"></figure>
+        <div class="route-copy"><strong>Still warm</strong><p>We eat them while they are still too hot, then take the coast road west to Calheta.</p></div>
+      </article>
+      <article class="route-stop">
+        <figure class="media visual-mask route-image"><img src="img/boat-dolphins.jpg" alt="A dolphin breaking the surface beside the boat off Madeira" width="1024" height="683" loading="lazy" decoding="async"></figure>
+        <div class="route-copy"><strong>The Atlantic</strong><p>Two and a half hours on a small boat until the light goes. Dolphins would be a bonus.</p></div>
+      </article>
     </div>
     <div class="sunset-bottom">
       <p class="personal">Because I can already picture us on the way back when the coast has gone dark.</p>
@@ -300,6 +330,10 @@
   </section>
 
   <section class="chapter chapter-dinner" id="dinner" data-light="dinner" aria-labelledby="dinnerTitle">
+    <header class="dinner-heading">
+      <h2 id="dinnerTitle">The secret garden</h2>
+      <p class="promise">An unmarked door, a drink in the garden, and six courses beside the open kitchen.</p>
+    </header>
     <div class="door-composition">
       <figure class="media visual-mask dinner-main">
         <img src="img/gazebo-course.jpg" alt="Gazebo's intimate dining room inside the family quinta" width="900" height="900" loading="lazy" decoding="async">
@@ -309,10 +343,12 @@
       </figure>
     </div>
     <div class="dinner-copy">
-      <h2 id="dinnerTitle">The secret garden</h2>
-      <p class="promise">An unmarked door, a drink in the garden, and six courses beside the open kitchen.</p>
       <p class="body">Everyone arrives for the same 19:30 sitting. We begin outside while the room fills, then watch Filipe and the kitchen turn whatever is growing on the island that week into dinner. A couple of hours later, we step through the hidden door and somehow we are back on a normal street in Funchal.</p>
       <p class="practical"><strong>Gazebo, Funchal</strong> · one sitting at 19:30 · North to South menu · six courses with wine pairing</p>
+      <div class="dinner-food">
+        <figure class="media visual-mask"><img src="img/gazebo-dish-one.jpg" alt="A garden table seen through reflections of tropical leaves" width="900" height="900" loading="lazy" decoding="async"></figure>
+        <figure class="media visual-mask"><img src="img/gazebo-detail.jpg" alt="A garden-led course served at Gazebo" width="900" height="900" loading="lazy" decoding="async"></figure>
+      </div>
       <p class="personal">Because this feels like the sort of place we would still be talking about years later.</p>
       <button class="choose" type="button" data-choice="c">This one: Gazebo <span aria-hidden="true">→</span></button>
     </div>
