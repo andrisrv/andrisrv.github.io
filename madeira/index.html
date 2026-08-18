@@ -193,9 +193,14 @@
   .gringo-frame{aspect-ratio:16/10;clip-path:inset(0 0 0 6%)}
   .gringo-frame img{object-position:center 58%}
   .sea-ending{max-width:1200px;margin:clamp(6rem,10vw,9rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.72fr);gap:clamp(3rem,8vw,8rem);align-items:center}
-  .ocean-pair{display:grid;grid-template-columns:1.25fr .75fr;gap:.7rem;align-items:end}
-  .ocean-pair figure:first-child{aspect-ratio:4/3;clip-path:inset(5% 0)}
-  .ocean-pair figure:last-child{aspect-ratio:4/5;clip-path:inset(0 8%)}
+  .ocean-pair{display:grid;grid-template-columns:1.18fr .82fr;grid-template-rows:1fr .72fr .58fr;gap:.7rem;min-height:680px}
+  .ocean-pair figure{height:100%}
+  .ocean-pair figure:nth-child(1){grid-row:1 / span 2;clip-path:inset(4% 0)}
+  .ocean-pair figure:nth-child(2){grid-column:2;grid-row:1;clip-path:inset(0 7%)}
+  .ocean-pair figure:nth-child(3){grid-column:2;grid-row:2;clip-path:inset(5% 0)}
+  .ocean-pair figure:nth-child(3) img{object-position:center 58%}
+  .ocean-pair figure:nth-child(4){grid-column:1 / -1;grid-row:3;clip-path:inset(0 4%)}
+  .ocean-pair figure:nth-child(4) img{object-position:center 72%}
   .sea-ending-copy{max-width:520px}
   .sea-ending-copy .personal{margin-top:1.7rem}
   .sea-ending-copy .practical{margin-top:1.5rem}
@@ -331,7 +336,7 @@
     .westward-copy{left:1rem;right:1rem;top:auto;bottom:2.5rem;translate:0}
     .westward-copy h3{font-size:clamp(3rem,14vw,4.2rem)}
     .gringo-frame{width:100%;aspect-ratio:4/3}
-    .ocean-pair{grid-template-columns:1.15fr .85fr;gap:.5rem}
+    .ocean-pair{grid-template-columns:1.15fr .85fr;grid-template-rows:1fr .72fr .58fr;gap:.5rem;min-height:520px}
     .gazebo-garden{aspect-ratio:4/3}
     .gazebo-room{width:88%;aspect-ratio:4/5}
     .menu-story{margin-top:4.8rem;padding-top:3rem;padding-bottom:3rem}
@@ -502,6 +507,8 @@
       <div class="ocean-pair">
         <figure class="media visual-mask"><img src="img/boat-dolphins.jpg" alt="A dolphin breaking the surface beside an On Tales boat" width="1024" height="683" loading="lazy" decoding="async"></figure>
         <figure class="media visual-mask"><img src="img/boat-whale.jpg" alt="A whale surfacing with Madeira's south coast behind it" width="1024" height="683" loading="lazy" decoding="async"></figure>
+        <figure class="media visual-mask"><img src="img/boat-gringo.jpg" alt="Gringo resting on the blue Atlantic below Madeira's cliffs" width="1400" height="787" loading="lazy" decoding="async"></figure>
+        <figure class="media visual-mask"><img src="img/boat-sunset.jpg" alt="The Atlantic turning orange and pink at sunset off Madeira" width="1024" height="575" loading="lazy" decoding="async"></figure>
       </div>
       <div class="story-copy sea-ending-copy">
         <h3>Someone is already watching the water.</h3>
