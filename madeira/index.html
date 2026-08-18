@@ -163,11 +163,35 @@
   .dinner-main{height:100%;width:min(78%,520px);clip-path:inset(0 42% 0 42%);box-shadow:0 28px 72px rgba(0,0,0,.34)}
   .dinner-main img{object-position:center}
   .dinner-detail{position:absolute;right:0;bottom:7%;width:42%;height:32%;border:9px solid #101c18;clip-path:inset(0 32%)}
+  .door-caption{position:absolute;left:4%;bottom:3%;z-index:4;max-width:28ch;padding:.65rem .8rem;background:rgba(16,28,24,.92);color:var(--cream-soft);font-size:.76rem;line-height:1.45}
   .dinner-copy{grid-column:2;max-width:660px;display:flex;flex-direction:column;gap:1.5rem}
   .dinner-heading h2{color:#fff1d3}
   .dinner-copy .body{max-width:590px;color:#d7d1be;margin:0}
   .dinner-copy .practical{max-width:510px}
-  .dinner-copy .personal{max-width:580px}
+  .dinner-deep-dive{grid-column:1 / -1;padding-top:clamp(3.5rem,7vw,6.5rem);border-top:1px solid var(--hair)}
+  .dinner-deep-dive h3{font-family:'Newsreader',serif;font-size:clamp(2.25rem,4vw,3.8rem);font-weight:500;line-height:1;letter-spacing:-.035em;margin:0 0 1.2rem}
+  .dinner-history{display:grid;grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);gap:clamp(3rem,8vw,8rem);align-items:start}
+  .dinner-history p{color:#d7d1be;line-height:1.72;margin:0}
+  .dinner-history p+p{margin-top:1rem}
+  .menu-intro{max-width:680px}
+  .menu-journeys{display:grid;grid-template-columns:1fr 1fr;margin-top:2rem;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  .menu-journey{padding:clamp(1.5rem,3vw,2.5rem) clamp(1.5rem,4vw,4rem) clamp(1.5rem,3vw,2.5rem) 0}
+  .menu-journey+.menu-journey{border-left:1px solid var(--hair);padding-left:clamp(1.5rem,4vw,4rem)}
+  .menu-name{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;margin-bottom:1rem}
+  .menu-name strong{font-family:'Newsreader',serif;font-size:clamp(1.75rem,3vw,2.6rem);font-weight:500;line-height:1}
+  .menu-name span{color:var(--candle);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+  .menu-sequence{color:var(--cream-soft);font-size:.92rem;line-height:1.62;margin:0 0 1.4rem}
+  .menu-price{display:grid;grid-template-columns:auto 1fr;gap:1.3rem;padding-top:1.1rem;border-top:1px solid var(--hair);margin:0}
+  .menu-price strong{font-family:'Newsreader',serif;color:var(--cream);font-size:1.45rem;font-weight:500;white-space:nowrap}
+  .menu-price span{color:var(--cream-soft);font-size:.86rem;line-height:1.5}
+  .gazebo-soul{display:grid;grid-template-columns:minmax(0,.9fr) minmax(340px,1.1fr);gap:clamp(3rem,8vw,8rem);align-items:center;margin-top:clamp(4rem,8vw,7rem)}
+  .gazebo-soul-copy{max-width:610px}
+  .gazebo-soul-copy>p{color:#d7d1be;line-height:1.72;margin:0}
+  .review-notes{list-style:none;padding:0;margin:1.5rem 0;border-top:1px solid var(--hair)}
+  .review-notes li{padding:.85rem 0;border-bottom:1px solid var(--hair);color:var(--cream-soft);font-size:.91rem;line-height:1.55}
+  .review-notes strong{color:var(--cream);font-weight:600}
+  .gazebo-soul-copy .personal{margin-top:1.6rem;max-width:580px}
+  .gazebo-soul-copy .choose{margin-top:1.5rem}
   .dinner-food{display:grid;grid-template-columns:.78fr 1.22fr;gap:.65rem;margin:.35rem 0}
   .dinner-food .media:first-child{aspect-ratio:4/5;clip-path:inset(0 12%)}
   .dinner-food .media:first-child img{object-position:center}
@@ -221,6 +245,9 @@
     .dinner-heading{grid-column:1;grid-row:1;max-width:720px}
     .door-composition{grid-column:1;grid-row:2;height:min(72svh,720px)}
     .dinner-copy{grid-column:1;grid-row:3;max-width:720px}
+    .dinner-deep-dive{grid-column:1;grid-row:4}
+    .dinner-history{grid-template-columns:1fr;gap:2.5rem}
+    .gazebo-soul{grid-template-columns:1fr 1fr;gap:2.5rem}
   }
 
   @media(max-width:640px){
@@ -274,6 +301,14 @@
     .door-composition{height:64svh;min-height:480px}
     .dinner-main{width:83%}
     .dinner-detail{width:46%;height:27%;border-width:7px}
+    .door-caption{left:0;bottom:1%;max-width:29ch}
+    .dinner-deep-dive{padding-top:2.8rem}
+    .dinner-deep-dive h3{font-size:2.45rem}
+    .menu-journeys{grid-template-columns:1fr;margin-top:1.5rem}
+    .menu-journey{padding:1.5rem 0}
+    .menu-journey+.menu-journey{border-left:0;border-top:1px solid var(--hair);padding-left:0}
+    .menu-price{grid-template-columns:1fr;gap:.35rem}
+    .gazebo-soul{grid-template-columns:1fr;gap:2.5rem;margin-top:3.5rem}
     .dinner-food{grid-template-columns:.8fr 1.2fr}
     .chosen-bg::after{background:linear-gradient(180deg,rgba(7,23,25,.5),rgba(7,23,25,.9) 58%,rgba(7,23,25,.98))}
     .chosen-note{justify-content:flex-end;padding-bottom:4rem}
@@ -422,7 +457,7 @@
   <section class="chapter chapter-dinner" id="dinner" data-light="dinner" aria-labelledby="dinnerTitle">
     <header class="dinner-heading">
       <h2 id="dinnerTitle" tabindex="-1">The secret garden</h2>
-      <p class="promise">An unmarked door, a drink in the garden, and six courses beside the open kitchen.</p>
+      <p class="promise">An unmarked door, a drink in the garden, and six or nine courses beside the open kitchen.</p>
     </header>
     <div class="door-composition">
       <figure class="media visual-mask dinner-main">
@@ -431,21 +466,54 @@
       <figure class="media visual-mask dinner-detail">
         <img src="img/gazebo-exterior.jpg" alt="Wine glasses waiting in Gazebo's tropical garden" width="900" height="900" loading="lazy" decoding="async">
       </figure>
+      <p class="door-caption">This is what opens up after the quiet street door and the garden: Gazebo's original 1932 room.</p>
     </div>
     <div class="dinner-copy">
-      <p class="body">Gazebo is inside chef Filipe Janeiro's family quinta, behind an unmarked door with a buzzer on an otherwise normal Funchal street. Everyone arrives for the same 19:30 sitting. We begin in the garden, then move into a ten-table room built around the open kitchen.</p>
-      <dl class="detail-ledger">
-        <div><dt>The menu</dt><dd>North to South: six seasonal courses tracing Madeira through the island's produce, with a wine pairing alongside them.</dd></div>
-        <div><dt>The kitchen</dt><dd>Filipe uses produce from the century-old quinta where he can, then works with small local growers and producers for the rest. We can see the team cooking and plating throughout dinner.</dd></div>
-        <div><dt>The reason</dt><dd>This is not a hotel dining room. It is his family's garden and his own small restaurant, now included in the Michelin Guide for its contemporary Madeiran tasting menus.</dd></div>
-      </dl>
+      <p class="body">Gazebo is not a restaurant hidden for effect. It sits inside Fazenda Margarida, the century-old family quinta of Filipe Janeiro's wife and partner, Adrianne Zino. There is no shopfront or glowing sign: just a discreet residential door, a buzzer and the feeling that we may have the wrong address.</p>
       <p class="practical"><strong>Gazebo</strong> · Rua dos Ilhéus 30, Funchal · Tuesday–Saturday · one sitting at 19:30</p>
-      <div class="dinner-food">
-        <figure class="media visual-mask"><img src="img/gazebo-plating.jpg" alt="A seasonal course plated with fruit, herbs and crisp vegetables at Gazebo" width="900" height="900" loading="lazy" decoding="async"></figure>
-        <figure class="media visual-mask"><img src="img/gazebo-detail.jpg" alt="A garden-led course served at Gazebo" width="900" height="900" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="dinner-deep-dive">
+      <div class="dinner-history">
+        <div>
+          <h3>Why it feels hidden</h3>
+          <p>Filipe and Adrianne deliberately kept the entrance understated, like a secret people pass between one another. We ring the bell, climb into a Madeiran garden full of flowers and fruit trees, and, if the weather is kind, begin outside with a first drink and the opening snacks.</p>
+          <p>The room beyond was built by Adrianne's family in 1932 as a place to receive friends. It has since been an office, gallery and antiques space. Gazebo kept those old pieces and turned it back into what it was made for: people gathering around food.</p>
+        </div>
+        <div class="menu-intro">
+          <h3>Two ways through Madeira</h3>
+          <p>Both menus change with the season and with what grows in the quinta or arrives from small island producers. North to South is the shorter, more focused dinner. East to West is the full version, with twice as many savoury plates before dessert. Still and sparkling water are included with either.</p>
+        </div>
       </div>
-      <p class="personal">I picked it because the whole evening has a point of view: one arrival time, very few tables, the garden outside and the kitchen right in front of us. It feels intimate without being stiff.</p>
-      <button class="choose" type="button" data-choice="c">This one: Gazebo <span aria-hidden="true">→</span></button>
+      <div class="menu-journeys" aria-label="Gazebo tasting menu comparison">
+        <article class="menu-journey">
+          <div class="menu-name"><strong>North to South</strong><span>Six moments</span></div>
+          <p class="menu-sequence">Snacks, couvert, one starter, one main course, dessert and petit four. It gives us the complete arc of the restaurant without making dinner the entire night.</p>
+          <p class="menu-price"><strong>€80 each</strong><span>Four-wine pairing: €45 each<br>€250 for both of us with the pairing</span></p>
+        </article>
+        <article class="menu-journey">
+          <div class="menu-name"><strong>East to West</strong><span>Nine moments</span></div>
+          <p class="menu-sequence">Snacks, couvert, two starters, two main courses, a pre-dessert, dessert and petit four. This is the longer and more immersive version.</p>
+          <p class="menu-price"><strong>€120 each</strong><span>Six-wine pairing: €80 each<br>€400 for both of us with the pairing</span></p>
+        </article>
+      </div>
+      <div class="gazebo-soul">
+        <div class="dinner-food">
+          <figure class="media visual-mask"><img src="img/gazebo-plating.jpg" alt="A seasonal course plated with fruit, herbs and crisp vegetables at Gazebo" width="900" height="900" loading="lazy" decoding="async"></figure>
+          <figure class="media visual-mask"><img src="img/gazebo-detail.jpg" alt="A garden-led course served at Gazebo" width="900" height="900" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="gazebo-soul-copy">
+          <h3>What people remember</h3>
+          <p>Recent diners keep returning to the same things, even when the dishes change:</p>
+          <ul class="review-notes">
+            <li><strong>It feels like being welcomed into a home.</strong> The garden, family antiques and tiny room soften what could otherwise feel like a formal tasting menu.</li>
+            <li><strong>The kitchen is part of the evening.</strong> We can watch every plate being built, and Filipe regularly comes to the tables to explain the ingredients and the story behind a course.</li>
+            <li><strong>The food still tastes like Madeira.</strong> Reviews praise the colour and invention, but also the recognisable island produce, careful wine matches and the sense that nothing is there merely to look clever.</li>
+          </ul>
+          <p>Gazebo is now selected by the Michelin Guide and received one Sol from Guía Repsol in 2026, but it still seats only around twenty-two people and keeps the same single 19:30 arrival.</p>
+          <p class="personal">I picked it because it has real history and a bit of theatre without pretending. We would ring a doorbell, have a drink under the fruit trees, watch dinner being made a few metres away and decide together how far across Madeira we want the menu to take us.</p>
+          <button class="choose" type="button" data-choice="c">This one: Gazebo <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -468,7 +536,7 @@
         </a>
         <a class="closing-row" href="#dinner" aria-label="Go back to the Gazebo dinner option">
           <span class="closing-main"><strong>For one unforgettable evening</strong><em>Gazebo</em></span>
-          <span class="closing-detail">Six courses + wine pairing</span>
+          <span class="closing-detail">Six or nine courses + wine pairing</span>
           <span class="closing-time">19:30</span>
           <span class="closing-arrow" aria-hidden="true">↑</span>
         </a>
@@ -578,7 +646,7 @@
   var copy={
     a:{title:'The slow morning.',line:'One hour side by side at Laurea, then the pool, sauna, steam room and as much time as we want.',promise:"I will arrange the treatment and spa access.",section:'#spa',light:'spa'},
     b:{title:'Sugar, then sunset.',line:'We will make the custard, eat the pastéis warm, then take Gringo out from Calheta for two and a half hours.',promise:"I will book the class, the boat and work out the drive.",section:'#sunset',light:'sunset'},
-    c:{title:'The secret garden.',line:'Gazebo at 19:30: six seasonal courses, the wine pairing and the open kitchen in front of us.',promise:"I will reserve the table and the North to South menu.",section:'#dinner',light:'dinner'}
+    c:{title:'The secret garden.',line:'Gazebo at 19:30: a seasonal tasting menu, the open kitchen in front of us and the choice of six or nine moments.',promise:"I will reserve the table, and we can choose the menu together.",section:'#dinner',light:'dinner'}
   };
 
   function reveal(choice,focus){
