@@ -110,7 +110,22 @@
   .spa-detail{position:absolute;width:39%;height:36%;right:0;bottom:0;border:9px solid #0a2221;clip-path:inset(18% 0)}
   .spa-story{grid-column:2;display:flex;flex-direction:column;gap:1.35rem;align-self:start;max-width:460px}
   .spa-story .body{color:#c9d7ca;margin:0}
-  .spa-rest{width:100%;aspect-ratio:16/7;clip-path:inset(12% 0)}
+  .spa-deep-dive{grid-column:1 / -1;display:grid;grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);gap:clamp(3rem,7vw,7rem);padding-top:clamp(3rem,7vw,6rem);border-top:1px solid var(--hair)}
+  .spa-deep-dive h3{font-family:'Newsreader',serif;font-size:clamp(2rem,3.5vw,3.3rem);font-weight:500;line-height:1;letter-spacing:-.035em;margin:0 0 1.25rem}
+  .massage-story p,.circuit-story>p,.spa-payoff-copy>p{color:#c9d7ca;margin:0;line-height:1.72}
+  .massage-story{max-width:500px}
+  .massage-story p+p{margin-top:1rem}
+  .spa-circuit{display:grid;grid-template-columns:repeat(3,1fr);margin:1.5rem 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  .spa-circuit article{padding:1.3rem 1.25rem 1.35rem 0}
+  .spa-circuit article+article{border-left:1px solid var(--hair);padding-left:1.25rem}
+  .spa-circuit strong{display:block;color:var(--cream);font-size:.78rem;letter-spacing:.075em;text-transform:uppercase;margin-bottom:.65rem}
+  .spa-circuit p{color:var(--cream-soft);font-size:.9rem;line-height:1.55;margin:0}
+  .circuit-note{font-size:.9rem!important;color:var(--cream-soft)!important;max-width:64ch}
+  .spa-payoff{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.9fr);gap:clamp(2rem,6vw,6rem);align-items:center;margin-top:clamp(1rem,3vw,3rem)}
+  .spa-payoff-copy{max-width:610px}
+  .spa-payoff-copy .personal{color:var(--cream);margin-top:1.5rem}
+  .spa-payoff-copy .choose{margin-top:1.5rem}
+  .spa-rest{width:100%;aspect-ratio:16/10;clip-path:inset(8% 0)}
   .spa-rest img{object-position:center 58%}
 
   /* Sunset light: three scenes moving west. */
@@ -200,6 +215,8 @@
     .spa-heading{grid-column:1;grid-row:1;max-width:720px}
     .spa-visual{grid-column:1;grid-row:2;min-height:620px}
     .spa-story{grid-column:1;grid-row:3;max-width:720px}
+    .spa-deep-dive{grid-column:1;grid-row:4;grid-template-columns:1fr;gap:3rem}
+    .spa-payoff{grid-template-columns:1fr 1fr;gap:2.5rem}
     .chapter-dinner{grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:3rem}
     .dinner-heading{grid-column:1;grid-row:1;max-width:720px}
     .door-composition{grid-column:1;grid-row:2;height:min(72svh,720px)}
@@ -232,7 +249,14 @@
     .spa-slice{grid-column:1;clip-path:inset(0 8%)}
     .spa-detail{grid-column:2;clip-path:inset(8% 0)}
     .spa-story{gap:1.2rem}
-    .spa-rest{aspect-ratio:16/8}
+    .spa-deep-dive{gap:2.8rem;padding-top:2.8rem}
+    .spa-deep-dive h3{font-size:2.35rem}
+    .spa-circuit{grid-template-columns:1fr;margin-top:1.2rem}
+    .spa-circuit article{padding:1rem 0}
+    .spa-circuit article+article{border-left:0;border-top:1px solid var(--hair);padding-left:0}
+    .spa-payoff{grid-template-columns:1fr;gap:1.8rem;margin-top:0}
+    .spa-payoff-copy{grid-row:2}
+    .spa-rest{grid-row:1;aspect-ratio:4/3}
     .sunset-heading{padding-bottom:2.8rem}
     .sunset-heading h2{font-size:clamp(3.7rem,17vw,5rem)}
     .route{grid-template-columns:1fr;gap:2.8rem}
@@ -322,18 +346,36 @@
       </figure>
     </div>
     <div class="spa-story">
-      <p class="body">We check in at Savoy Palace late in the morning, change into robes and go into the same treatment room. The massage lasts an hour. After it ends, the rest of Laurea is ours for the day, so there is no appointment immediately after and no reason to hurry out.</p>
-      <dl class="detail-ledger">
-        <div><dt>The hour</dt><dd>The Ultimate Aromatherapy Experience for two: a sixty-minute massage side by side, using aromatherapy oils and a mix of pressure, Swedish and muscle-release techniques.</dd></div>
-        <div><dt>Afterwards</dt><dd>The heated lagoon pool, sauna, steam room, jacuzzi, salt room, sensory showers, ice fountain and relaxation room are all included with a treatment of sixty minutes or longer.</dd></div>
-        <div><dt>The place</dt><dd>Laurea is a 3,100 m² spa with thirteen treatment rooms, designed around Madeira's Laurissilva forest. It was named Portugal's Best Hotel Spa in 2021, 2024 and 2025.</dd></div>
-      </dl>
-      <p class="practical"><strong>Laurea Spa, Savoy Palace</strong> · Avenida do Infante 25, Funchal · open daily, 10:00–20:00</p>
-      <figure class="media visual-mask spa-rest">
-        <img src="img/spa-lounge.jpg" alt="Warm loungers beside the illuminated salt wall at Laurea Spa" width="600" height="600" loading="lazy" decoding="async">
-      </figure>
-      <p class="personal">I picked it because you love spas and unusual experiences, and this is the most extraordinary spa I could find on the island. We can do the whole circuit together, then stay by the warm pool until we feel like leaving.</p>
-      <button class="choose" type="button" data-choice="a">This one: Laurea <span aria-hidden="true">→</span></button>
+      <p class="body">Laurea is inside Savoy Palace on Avenida do Infante, right in Funchal rather than at a resort somewhere across the island. We can walk in late in the morning, change into robes and spend the rest of the day there without planning anything around it.</p>
+      <p class="practical"><strong>Laurea Spa, Savoy Palace</strong> · Avenida do Infante 25, Funchal · adults only · open daily, 10:00–20:00</p>
+    </div>
+    <div class="spa-deep-dive">
+      <div class="massage-story">
+        <h3>The massage itself</h3>
+        <p>We would have the sixty-minute Ultimate Aromatherapy Experience side by side in the same treatment room. It is a full-body treatment using aromatherapy oils, carefully applied pressure and Swedish and neuromuscular techniques to work through tension.</p>
+        <p>It also incorporates lymphatic-drainage movements, so it is more considered than a generic relaxing massage. The idea is an hour that feels genuinely restorative, with both of us there together, before the rest of the spa begins.</p>
+      </div>
+      <div class="circuit-story">
+        <h3>Then we have the whole circuit</h3>
+        <div class="spa-circuit">
+          <article><strong>Warmth</strong><p>Sauna, steam room and jacuzzi, with time to move between them rather than treating each one like a quick stop.</p></article>
+          <article><strong>Contrast</strong><p>Sensory showers and an ice fountain when the heat becomes enough, then back into the warmth if we want.</p></article>
+          <article><strong>Quiet</strong><p>The heated indoor lagoon pool, halotherapy salt room and separate relaxation room for the part where we stop doing anything.</p></article>
+        </div>
+        <p class="circuit-note">Because the massage lasts sixty minutes, access to the spa is included. That is what makes this a full day rather than a treatment appointment: we can use the entire circuit afterwards and leave whenever we feel finished.</p>
+      </div>
+      <div class="spa-payoff">
+        <div class="spa-payoff-copy">
+          <h3>Why Laurea is different</h3>
+          <p>Savoy describes it as the largest spa in Portugal: 3,100 m², thirteen treatment rooms and enough separate spaces that the afternoon does not depend on one pool. The design takes Madeira's Laurissilva forest as its starting point, so the greens, water, stone, botanical scents and low light are meant to feel like the island brought indoors.</p>
+          <p>It also has the record to back up the scale. Laurea was named Portugal's Best Hotel Spa by the World Spa Awards in 2021, 2024 and 2025.</p>
+          <p class="personal">I picked it because you love spas and unusual experiences, and this is the version where the spa is the whole gift. We get the massage together, try everything, find our favourite corner and stay there until we are ready to walk back out into Funchal.</p>
+          <button class="choose" type="button" data-choice="a">This one: Laurea <span aria-hidden="true">→</span></button>
+        </div>
+        <figure class="media visual-mask spa-rest">
+          <img src="img/spa-lounge.jpg" alt="Warm loungers beside the illuminated halotherapy salt wall at Laurea Spa" width="600" height="600" loading="lazy" decoding="async">
+        </figure>
+      </div>
     </div>
   </section>
 
