@@ -98,7 +98,7 @@
   .journey-intro h1{font-family:'Newsreader',serif;font-size:clamp(3.8rem,7vw,6rem);line-height:.87;letter-spacing:-.04em;font-weight:500;max-width:780px;margin:0;text-wrap:balance}
   .journey-intro h1 i{display:block;color:var(--candle);font-weight:400}
   .journey-intro .intro-copy p{font-size:clamp(1rem,1.35vw,1.15rem);line-height:1.72;color:var(--cream-soft);max-width:43ch;margin:0 0 .25rem}
-  .intro-glimpses{max-width:1240px;margin:clamp(3.5rem,6vw,5.5rem) auto 0;display:grid;grid-template-columns:1.1fr .78fr 1fr;gap:clamp(.8rem,1.7vw,1.5rem);align-items:end}
+  .intro-glimpses{max-width:1440px;margin:clamp(3.5rem,6vw,5.5rem) auto 0;display:grid;grid-template-columns:1.18fr .82fr 1fr;gap:clamp(.8rem,1.7vw,1.5rem);align-items:end}
   .glimpse{display:block;color:var(--cream);text-decoration:none;position:relative;transition:transform .45s var(--ease)}
   .glimpse:nth-child(2){margin-bottom:clamp(2rem,5vw,4.5rem)}
   .glimpse:nth-child(3){margin-bottom:clamp(.3rem,1vw,1rem)}
@@ -154,25 +154,27 @@
   .spa-heading{max-width:1240px;margin:0 auto;padding:clamp(1.8rem,3vw,3rem) var(--page-gutter) clamp(3rem,6vw,5.5rem)}
   .spa-heading h2{color:#eff4e9}
   .spa-heading .promise{max-width:680px;margin-top:1.5rem}
-  .spa-place{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.32fr) minmax(320px,.68fr);gap:clamp(2.5rem,6vw,6rem);align-items:end;padding:0 var(--page-gutter)}
+  .spa-place{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(320px,.62fr);gap:clamp(2.5rem,6vw,6rem);align-items:end;padding:0 var(--page-gutter)}
   .spa-hotel{aspect-ratio:3/2;clip-path:inset(0 5% 0 0)}
   .spa-hotel img{object-position:center 54%}
   .spa-place-copy{max-width:480px;padding-bottom:clamp(1rem,4vw,4rem)}
   .spa-place-copy .practical{margin-top:1.5rem}
-  .spa-enter{max-width:1180px;margin:clamp(6rem,11vw,10rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(280px,.62fr) minmax(0,1.38fr);gap:clamp(3rem,8vw,8rem);align-items:center}
+  .spa-enter{max-width:1360px;margin:clamp(6rem,11vw,10rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(280px,.54fr) minmax(0,1.46fr);gap:clamp(3rem,7vw,7rem);align-items:center}
   .spa-enter-copy{max-width:480px}
   .spa-enter-images{display:grid;grid-template-columns:1.2fr .8fr;gap:.75rem;align-items:end}
   .spa-reception{aspect-ratio:1/1;clip-path:inset(5% 0)}
   .spa-forest-room{aspect-ratio:4/5;clip-path:inset(0 8%)}
-  .spa-massage{max-width:1180px;margin:clamp(6rem,11vw,10rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.72fr);gap:clamp(3rem,8vw,8rem);align-items:center}
-  .spa-treatment{aspect-ratio:4/3;clip-path:inset(0 7% 0 0)}
+  .spa-massage{max-width:1360px;margin:clamp(6rem,11vw,10rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,.68fr);gap:clamp(3rem,7vw,7rem);align-items:center}
+  .spa-treatment{aspect-ratio:3/2;clip-path:inset(0 4% 0 0)}
   .spa-massage-copy{max-width:500px}
-  .spa-after{max-width:1240px;margin:clamp(6rem,11vw,10rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);gap:clamp(3rem,7vw,7rem);align-items:center}
-  .spa-water-composition{min-height:680px;position:relative}
-  .spa-pool-frame{width:88%;height:78%;clip-path:inset(7% 0)}
+  .spa-after{max-width:1440px;margin:clamp(6rem,11vw,10rem) auto 0;padding:0 var(--page-gutter)}
+  .spa-water-composition{min-height:1040px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:380px 300px 340px;gap:.75rem}
+  .spa-pool-frame{grid-column:1 / 9;grid-row:1 / 3;clip-path:inset(3% 0)}
   .spa-pool-frame img{object-position:center}
-  .spa-lounge-frame{position:absolute;width:44%;height:38%;right:0;bottom:0;border:8px solid #0a2221;clip-path:inset(0 10%)}
-  .spa-after-copy{max-width:530px}
+  .spa-lounge-frame{grid-column:9 / 13;grid-row:1;clip-path:inset(0 5%)}
+  .spa-waterfall-frame{grid-column:9 / 13;grid-row:2;clip-path:inset(4% 0)}
+  .spa-relax-frame{grid-column:2 / 12;grid-row:3;clip-path:inset(0 3%)}
+  .spa-after-copy{max-width:650px;margin:clamp(3.5rem,6vw,6rem) 6% 0 auto}
   .spa-after-copy .personal{margin-top:1.7rem}
   .spa-after-copy .choose{margin-top:1.6rem}
 
@@ -184,23 +186,23 @@
   .kitchen-story{max-width:1200px;margin:0 auto;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.72fr);gap:clamp(3rem,8vw,8rem);align-items:center}
   .kitchen-hero{aspect-ratio:4/3;clip-path:inset(0 5% 0 0)}
   .kitchen-copy{max-width:500px}
-  .pastry-table{max-width:1100px;margin:clamp(5rem,9vw,8rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:.72fr 1.08fr .72fr;gap:clamp(.65rem,2vw,1.4rem);align-items:center}
+  .pastry-table{max-width:1360px;margin:clamp(5rem,9vw,8rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:.78fr 1.18fr .78fr;gap:clamp(.65rem,1.5vw,1.15rem);align-items:center}
   .pastry-table figure:nth-child(1){aspect-ratio:4/5;clip-path:inset(0 8%)}
-  .pastry-table figure:nth-child(2){aspect-ratio:1/1;clip-path:inset(6% 0)}
+  .pastry-table figure:nth-child(2){aspect-ratio:4/5;clip-path:inset(3% 0)}
   .pastry-table figure:nth-child(3){aspect-ratio:4/5;clip-path:inset(0 8%)}
-  .pastry-note{max-width:680px;margin:2.2rem auto 0;padding:0 var(--page-gutter);text-align:center;color:var(--cream-soft);line-height:1.72}
-  .westward{position:relative;max-width:1440px;margin:clamp(6rem,11vw,10rem) auto 0;padding:0 var(--page-gutter)}
-  .westward .media{aspect-ratio:16/6;clip-path:inset(5% 0)}
+  .pastry-note{max-width:760px;margin:2.6rem 12% 0 auto;padding:0 var(--page-gutter);text-align:left;color:var(--cream-soft);line-height:1.72}
+  .westward{position:relative;max-width:1600px;margin:clamp(7rem,12vw,11rem) auto 0;padding:0 var(--page-gutter)}
+  .westward .media{aspect-ratio:16/7;clip-path:inset(3% 0)}
   .westward .media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,29,37,.84),rgba(17,29,37,.08) 62%)}
   .westward-copy{position:absolute;left:clamp(2rem,8vw,8rem);top:50%;translate:0 -50%;z-index:2;max-width:520px}
   .westward-copy h3{font-size:clamp(3rem,6vw,5.5rem);color:#fff0e2}
   .westward-copy p{color:#f2ded1;max-width:40ch}
-  .boat-story{max-width:1200px;margin:clamp(6rem,10vw,9rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(320px,.68fr) minmax(0,1.32fr);gap:clamp(3rem,7vw,7rem);align-items:center}
+  .boat-story{max-width:1380px;margin:clamp(7rem,11vw,10rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(320px,.58fr) minmax(0,1.42fr);gap:clamp(3rem,7vw,7rem);align-items:center}
   .boat-copy{max-width:500px}
   .gringo-frame{aspect-ratio:16/10;clip-path:inset(0 0 0 6%)}
   .gringo-frame img{object-position:center 58%}
-  .sea-ending{max-width:1200px;margin:clamp(6rem,10vw,9rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.72fr);gap:clamp(3rem,8vw,8rem);align-items:center}
-  .ocean-pair{display:grid;grid-template-columns:1.18fr .82fr;grid-template-rows:1fr .72fr .58fr;gap:.7rem;min-height:680px}
+  .sea-ending{max-width:1440px;margin:clamp(7rem,11vw,10rem) auto 0;padding:0 var(--page-gutter)}
+  .ocean-pair{display:grid;grid-template-columns:1.32fr .68fr;grid-template-rows:380px 300px 260px;gap:.75rem;min-height:940px}
   .ocean-pair figure{height:100%}
   .ocean-pair figure:nth-child(1){grid-row:1 / span 2;clip-path:inset(4% 0)}
   .ocean-pair figure:nth-child(2){grid-column:2;grid-row:1;clip-path:inset(0 7%)}
@@ -208,7 +210,7 @@
   .ocean-pair figure:nth-child(3) img{object-position:center 58%}
   .ocean-pair figure:nth-child(4){grid-column:1 / -1;grid-row:3;clip-path:inset(0 4%)}
   .ocean-pair figure:nth-child(4) img{object-position:center 72%}
-  .sea-ending-copy{max-width:520px}
+  .sea-ending-copy{max-width:680px;margin:clamp(3.5rem,6vw,6rem) 5% 0 auto}
   .sea-ending-copy .personal{margin-top:1.7rem}
   .sea-ending-copy .practical{margin-top:1.5rem}
   .sea-ending-copy .choose{margin-top:1.5rem}
@@ -218,22 +220,24 @@
   .dinner-heading{max-width:1200px;margin:0 auto;padding:clamp(1.8rem,3vw,3rem) var(--page-gutter) clamp(3rem,6vw,5.5rem)}
   .dinner-heading .promise{margin-top:1.5rem}
   .dinner-heading h2{color:#fff1d3}
-  .dinner-arrival{max-width:1200px;margin:0 auto;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.16fr) minmax(320px,.72fr);gap:clamp(3rem,8vw,8rem);align-items:center}
+  .dinner-arrival{max-width:1400px;margin:0 auto;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.48fr) minmax(320px,.62fr);gap:clamp(3rem,7vw,7rem);align-items:center}
   .gazebo-garden{aspect-ratio:4/3;clip-path:inset(0 5% 0 0)}
   .dinner-arrival-copy{max-width:500px}
   .dinner-arrival-copy .practical{margin-top:1.5rem}
-  .dinner-house{max-width:1180px;margin:clamp(6rem,11vw,10rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr);gap:clamp(3rem,8vw,8rem);align-items:center}
-  .gazebo-room{aspect-ratio:4/5;clip-path:inset(0 7%)}
+  .dinner-house{max-width:1320px;margin:clamp(7rem,11vw,10rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);gap:clamp(3rem,7vw,7rem);align-items:center}
+  .gazebo-room{aspect-ratio:1/1;clip-path:inset(0 4%)}
   .dinner-house-copy{max-width:570px}
   .menu-story{max-width:880px;margin:clamp(6rem,11vw,10rem) auto 0;padding:clamp(3rem,6vw,5rem) var(--page-gutter);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
   .menu-story p{font-size:clamp(1.05rem,1.55vw,1.22rem);line-height:1.75;color:#d7d1be;margin:0}
   .menu-story p+p{margin-top:1.25rem}
   .menu-story .menu-recommendation{font-family:'Newsreader',serif;font-size:clamp(1.5rem,2.5vw,2rem);font-style:italic;line-height:1.45;color:var(--cream);margin-top:2rem}
-  .dinner-ending{max-width:1200px;margin:clamp(6rem,11vw,10rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,.92fr) minmax(330px,1.08fr);gap:clamp(3rem,8vw,8rem);align-items:center}
-  .dinner-food{display:grid;grid-template-columns:.74fr 1.26fr;gap:.7rem;align-items:end}
-  .dinner-food figure:first-child{aspect-ratio:4/5;clip-path:inset(0 10%)}
-  .dinner-food figure:last-child{aspect-ratio:1/1;clip-path:inset(7% 0)}
-  .dinner-ending-copy{max-width:560px}
+  .dinner-ending{max-width:1440px;margin:clamp(7rem,11vw,10rem) auto 0;padding:0 var(--page-gutter)}
+  .dinner-food{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:420px 340px;gap:.75rem}
+  .dinner-food figure:nth-child(1){grid-column:1 / 8;grid-row:1;clip-path:inset(3% 0)}
+  .dinner-food figure:nth-child(2){grid-column:8 / 13;grid-row:1 / 3;clip-path:inset(0 4%)}
+  .dinner-food figure:nth-child(3){grid-column:1 / 5;grid-row:2;clip-path:inset(0 4%)}
+  .dinner-food figure:nth-child(4){grid-column:5 / 8;grid-row:2;clip-path:inset(4% 0)}
+  .dinner-ending-copy{max-width:700px;margin:clamp(3.5rem,6vw,6rem) 5% 0 auto}
   .dinner-recognition{margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid var(--chapter-rule)}
   .dinner-recognition p{color:#e4d9c4}
   .dinner-recognition p+p{margin-top:1rem}
@@ -465,6 +469,8 @@
       <div class="spa-water-composition">
         <figure class="media visual-mask spa-pool-frame"><img src="img/spa-pool.jpg" alt="The heated lagoon pool and waterfalls inside Laurea Spa" width="1400" height="700" loading="lazy" decoding="async"></figure>
         <figure class="media visual-mask spa-lounge-frame"><img src="img/spa-lounge.jpg" alt="Warm loungers beside the halotherapy salt wall at Laurea Spa" width="600" height="600" loading="lazy" decoding="async"></figure>
+        <figure class="media visual-mask spa-waterfall-frame"><img src="img/spa-waterfall.jpg" alt="Water falling into the green-tiled thermal circuit at Laurea Spa" width="600" height="600" loading="lazy" decoding="async"></figure>
+        <figure class="media visual-mask spa-relax-frame"><img src="img/spa-relaxation-area.jpg" alt="The circular green mosaic jacuzzi inside Laurea Spa" width="600" height="600" loading="lazy" decoding="async"></figure>
       </div>
       <div class="story-copy spa-after-copy">
         <h3>Afterwards, we stay as long as we like.</h3>
@@ -574,6 +580,8 @@
       <div class="dinner-food">
         <figure class="media visual-mask"><img src="img/gazebo-plating.jpg" alt="A seasonal Gazebo course built around fruit, herbs and crisp vegetables" width="900" height="900" loading="lazy" decoding="async"></figure>
         <figure class="media visual-mask"><img src="img/gazebo-detail.jpg" alt="A colourful garden-led course served at Gazebo" width="900" height="900" loading="lazy" decoding="async"></figure>
+        <figure class="media visual-mask"><img src="img/gazebo-dish-one.jpg" alt="Gazebo's dining table seen through the tropical leaves of the garden" width="900" height="900" loading="lazy" decoding="async"></figure>
+        <figure class="media visual-mask"><img src="img/gazebo-dish-two.jpg" alt="An edible flower and wine glasses catching the late light at Gazebo" width="900" height="900" loading="lazy" decoding="async"></figure>
       </div>
       <div class="story-copy dinner-ending-copy">
         <h3>People remember the whole evening.</h3>
