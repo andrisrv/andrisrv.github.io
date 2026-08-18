@@ -9,7 +9,7 @@
 <script>document.documentElement.classList.add('js');</script>
 <noscript><style>.curtain{display:none!important}#main{display:block!important}</style></noscript>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=Karla:wght@400;500&amp;family=Caveat:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;family=Karla:wght@400;500&amp;family=Caveat:wght@500&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --basalt:#08181B; --deep:#0E2A2C; --cream:#F7F1E4; --mist:#B9B4A2;
@@ -34,7 +34,7 @@
   @keyframes breathe{0%,100%{transform:translate(-50%,-55%) scale(1);opacity:.85}50%{transform:translate(-50%,-55%) scale(1.09);opacity:1}}
   .curtain-inner{position:relative;z-index:3;max-width:520px;}
   .hand{font-family:'Caveat',cursive;font-size:27px;color:var(--bougain);display:block;margin-bottom:.5rem;}
-  .big{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(42px,8vw,72px);line-height:1;letter-spacing:-.025em;margin:0 0 1.6rem;}
+  .big{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(42px,8vw,72px);line-height:1;letter-spacing:-.025em;margin:0 0 1.6rem;}
   .big i{font-style:italic;font-weight:400;color:var(--gold);}
   .tease{font-size:16.5px;line-height:1.75;color:var(--mist);margin:0 auto .9rem;max-width:410px;}
   .tease strong{color:var(--cream);font-weight:500;}
@@ -43,7 +43,7 @@
   .go{margin-top:2rem;font-family:'Karla',sans-serif;font-size:15px;font-weight:500;color:var(--basalt);
     background:var(--cream);border:none;border-radius:100px;padding:14px 32px;cursor:pointer;
     display:inline-flex;align-items:center;gap:10px;
-    transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease;box-shadow:0 0 0 0 rgba(247,241,228,.28);}
+    transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s ease;box-shadow:0 0 0 0 rgba(247,241,228,.28);}
   .go:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 0 8px rgba(247,241,228,.09);}
   .go:active{transform:scale(.97);}
   .go .arw{transition:transform .25s ease;}
@@ -64,68 +64,42 @@
   /* section head */
   .head{padding:4rem 0 2rem;max-width:620px;}
   .kicker{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 .9rem;}
-  h1.mid{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,5vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 1.1rem;}
+  h1.mid{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(30px,5vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 1.1rem;}
   h1.mid i{font-style:italic;font-weight:400;color:var(--gold);}
   .sub{font-size:16px;line-height:1.72;color:var(--mist);margin:0;}
 
   /* option block */
   .opt-block{padding:3.5rem 0;border-top:1px solid var(--hair);scroll-margin-top:76px;}
-  .rev{opacity:1;transform:none;}
-  .js .rev{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
-  .rev.in{opacity:1;transform:none;}
   .numrow{display:flex;align-items:baseline;gap:14px;margin-bottom:.9rem;flex-wrap:wrap;}
-  .num{font-family:'Fraunces',serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(185,180,162,.6);}
-  .chip{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;padding:5px 11px;border-radius:100px;
-    border:1px solid rgba(247,241,228,.2);}
-  .chip.a{color:#9FD3E8;background:rgba(159,211,232,.09);}
-  .chip.b{color:var(--laurel);background:rgba(127,176,138,.09);}
-  .chip.c{color:var(--gold);background:rgba(224,174,84,.09);}
-  h2.opt-t{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,5.5vw,48px);line-height:1.05;letter-spacing:-.025em;margin:0 0 1.2rem;}
+  .num{font-family:'Newsreader',serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(185,180,162,.6);}
+  h2.opt-t{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(30px,5.5vw,48px);line-height:1.05;letter-spacing:-.025em;margin:0 0 1.2rem;}
   .lead{font-size:17.5px;line-height:1.68;color:var(--cream);max-width:640px;margin:0 0 2rem;}
   .lead b{color:var(--gold);font-weight:400;}
 
-  .hero-img{position:relative;overflow:hidden;border-radius:18px;aspect-ratio:16/8;margin-bottom:12px;background:var(--deep);}
-  .hero-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.16,1,.3,1);}
-  .hero-img:hover img{transform:scale(1.045);}
+  .hero-img{position:relative;overflow:hidden;border-radius:6px;aspect-ratio:16/8;margin-bottom:10px;background:var(--deep);}
+  .hero-img img{width:100%;height:100%;object-fit:cover;}
   .cap{position:absolute;bottom:0;left:0;right:0;padding:2.5rem 1.4rem 1.1rem;font-size:13px;color:var(--cream);
     background:linear-gradient(to top,rgba(8,24,27,.96) 0%,rgba(8,24,27,.62) 42%,rgba(8,24,27,0) 100%);text-shadow:0 1px 2px rgba(0,0,0,.55);}
 
   .hero-img.image-missing::after,.tile.image-missing::after{content:'Photo unavailable';position:absolute;inset:0;display:grid;place-items:center;
     color:rgba(247,241,228,.55);font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:linear-gradient(135deg,var(--deep),#173638);}
 
-  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:2.5rem;}
-  .tile{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:1/1;background:var(--deep);}
-  .tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.16,1,.3,1);}
-  .tile:hover img{transform:scale(1.07);}
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:2.75rem;}
+  .tile{position:relative;overflow:hidden;border-radius:4px;aspect-ratio:4/3;background:var(--deep);}
+  .tile img{width:100%;height:100%;object-fit:cover;}
 
-  .cols{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;margin-bottom:2rem;}
-  @media(max-width:820px){ .cols{grid-template-columns:1fr;gap:2rem;} }
-  .h3{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin:0 0 1rem;}
-  .beats{list-style:none;margin:0;padding:0;counter-reset:b;}
-  .beats li{position:relative;padding:0 0 1.05rem 2.1rem;counter-increment:b;font-size:15px;line-height:1.6;color:var(--mist);}
-  .beats li::before{content:counter(b);position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;
-    border:1px solid rgba(224,174,84,.45);color:var(--gold);font-size:11px;display:flex;align-items:center;justify-content:center;}
-  .beats li b{color:var(--cream);font-weight:500;}
-  .facts{background:var(--deep);border:1px solid var(--hair);border-radius:16px;padding:1.25rem 1.4rem;}
-  .facts dl{margin:0;}
-  .facts dt{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:rgba(185,180,162,.7);margin-bottom:3px;}
-  .facts dd{margin:0 0 .95rem;font-size:14.5px;color:var(--cream);line-height:1.5;}
-  .facts dd:last-of-type{margin-bottom:0;}
-  .quote{border-left:2px solid rgba(224,174,84,.4);padding:.2rem 0 .2rem 1.1rem;margin:0 0 2rem;
-    font-family:'Fraunces',serif;font-style:italic;font-size:17px;line-height:1.6;color:var(--cream);max-width:600px;}
-  .quote span{display:block;font-family:'Karla',sans-serif;font-style:normal;font-size:12.5px;color:var(--mist);margin-top:.6rem;}
-
-  .opt{margin:0 0 1.75rem;}
-  .opt-l{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(185,180,162,.75);margin:0 0 .65rem;}
-  .pills{display:flex;flex-wrap:wrap;gap:8px;}
-  .pill{font-family:'Karla',sans-serif;font-size:13px;line-height:1.35;color:var(--mist);background:transparent;
-    border:1px solid rgba(247,241,228,.2);border-radius:100px;padding:10px 16px;min-height:44px;max-width:100%;white-space:normal;text-align:left;cursor:pointer;transition:background .22s ease,border-color .22s ease,color .22s ease;}
-  .pill:hover{border-color:rgba(247,241,228,.42);color:var(--cream);}
-  .pill.on{background:var(--cream);color:var(--basalt);border-color:var(--cream);font-weight:500;}
-  .pill-note{font-size:14px;line-height:1.6;color:var(--mist);margin:.9rem 0 0;min-height:46px;}
+  .story{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(220px,.65fr);gap:clamp(2.5rem,6vw,5rem);margin-bottom:2.2rem;}
+  .plan-title{font-family:'Newsreader',serif;font-size:19px;font-weight:600;margin:0 0 1rem;}
+  .plan p:not(.plan-title){font-size:16px;line-height:1.68;color:var(--mist);margin:0;padding:1rem 0;border-top:1px solid var(--hair);}
+  .plan p:last-child{padding-bottom:0;}
+  .details{align-self:start;border-top:1px solid rgba(224,174,84,.42);padding-top:1rem;}
+  .details .label,.why .label{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(185,180,162,.72);margin-bottom:.65rem;}
+  .details p{font-size:14px;line-height:1.7;color:var(--mist);margin:0;}
+  .details strong{color:var(--cream);font-weight:500;}
+  .why{max-width:680px;border-top:1px solid var(--hair);padding-top:1.25rem;margin:0 0 2rem;font-size:17px;line-height:1.62;color:var(--cream);}
   .pick{font-family:'Karla',sans-serif;font-size:15px;font-weight:500;color:var(--basalt);background:var(--gold);
     border:none;border-radius:100px;padding:14px 30px;cursor:pointer;
-    transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .22s ease;}
+    transition:transform .2s cubic-bezier(.16,1,.3,1),background .22s ease;}
   .pick:hover{background:#EDC272;transform:translateY(-2px);}
   .pick:active{transform:scale(.975);}
 
@@ -136,14 +110,14 @@
   .done.on{display:block;}
   .seal{width:78px;height:78px;margin:0 auto 1.7rem;border-radius:50%;background:rgba(219,92,132,.14);
     border:1px solid rgba(219,92,132,.4);display:flex;align-items:center;justify-content:center;font-size:31px;
-    animation:pop .7s cubic-bezier(.34,1.56,.64,1) forwards;}
+    animation:pop .55s cubic-bezier(.16,1,.3,1) forwards;}
   @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
-  .done h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:0 0 .9rem;}
+  .done h2{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:0 0 .9rem;}
   .done h2 i{font-style:italic;font-weight:400;color:var(--gold);}
   .done .line{font-size:16.5px;line-height:1.7;color:var(--mist);max-width:420px;margin:0 auto 2rem;}
   .slip{display:inline-block;text-align:left;background:var(--deep);border:1px solid var(--hair);
-    border-radius:16px;padding:1.2rem 1.6rem;margin-bottom:2rem;}
-  .slip .t{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin:0 0 .35rem;}
+    border-radius:6px;padding:1.2rem 1.6rem;margin-bottom:2rem;}
+  .slip .t{font-family:'Newsreader',serif;font-size:19px;font-weight:600;margin:0 0 .35rem;}
   .slip .d{font-size:13.5px;color:var(--mist);margin:0;}
   .undo{font-family:'Caveat',cursive;font-size:20px;color:var(--mist);background:none;border:none;cursor:pointer;
     text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
@@ -159,18 +133,16 @@
     .nav a{min-width:38px;text-align:center;font-size:13px;}
     .head{padding-top:3rem;}
     .opt-block{padding:3rem 0;}
-    .hero-img{aspect-ratio:4/3;border-radius:15px;}
+    .hero-img{aspect-ratio:4/3;}
     .cap{padding:3.5rem 1rem 1rem;line-height:1.45;}
     .strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);
       margin:0 calc(var(--gutter) * -1) 2.25rem;padding:0 var(--gutter) .65rem;scrollbar-width:none;}
     .strip::-webkit-scrollbar{display:none;}
     .tile{flex:0 0 min(72vw,280px);scroll-snap-align:start;}
-    .cols{gap:1.5rem;}
-    .facts{padding:1.15rem 1.2rem;}
-    .pill-note{min-height:108px;}
+    .story{grid-template-columns:1fr;gap:2rem;}
     .pick{width:100%;justify-content:center;min-height:48px;}
   }
-  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise,.rev{opacity:1!important;transform:none!important}.hero-img:hover img,.tile:hover img{transform:none!important}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -203,13 +175,12 @@
   </div>
 
   <!-- ============ ONE ============ -->
-  <section class="opt-block rev" id="one">
+  <section class="opt-block" id="one">
     <div class="numrow">
       <span class="num">Option one</span>
-      <span class="chip a">still water</span>
     </div>
     <h2 class="opt-t">The slow morning</h2>
-    <p class="lead">Three thousand square metres of spa built to feel like the inside of the Laurissilva forest — the mossy, ancient, permanently damp one we'll be hiking through anyway. Except this version has <b>an ice fountain, a Himalayan salt room and a heated pool with waterfalls</b>. It has been voted the best hotel spa in Portugal three times.</p>
+    <p class="lead">A sixty-minute massage together, then the whole spa is ours: steam, sauna, the salt room and the warm pool. No schedule after that, no decisions, nowhere else we need to be.</p>
 
     <div class="hero-img">
       <img src="img/spa-pool.jpg" alt="The heated lagoon pool and waterfalls inside Laurea Spa" width="1400" height="700" decoding="async">
@@ -217,48 +188,35 @@
     </div>
     <div class="strip">
       <div class="tile"><img src="img/spa-treatment-room.jpg" alt="A candlelit couple's treatment room at Laurea Spa" width="600" height="600" loading="lazy" decoding="async"></div>
-      <div class="tile"><img src="img/spa-interior.jpg" alt="The dark stone and warm lighting of Laurea Spa's wellness circuit" width="600" height="600" loading="lazy" decoding="async"></div>
       <div class="tile"><img src="img/spa-waterfall.jpg" alt="Water cascading into one of Laurea Spa's indoor pools" width="600" height="600" loading="lazy" decoding="async"></div>
-      <div class="tile"><img src="img/spa-relaxation-area.jpg" alt="Loungers beside the spa's softly lit pool" width="600" height="600" loading="lazy" decoding="async"></div>
       <div class="tile"><img src="img/spa-lounge.jpg" alt="A quiet lounge inside Laurea Spa" width="600" height="600" loading="lazy" decoding="async"></div>
-      <div class="tile"><img src="img/spa-corridor.jpg" alt="The forest-inspired corridor leading through Laurea Spa" width="600" height="600" loading="lazy" decoding="async"></div>
     </div>
 
-    <div class="cols">
-      <div>
-        <p class="h3">How the day goes</p>
-        <ol class="beats">
-          <li><b>We arrive and change.</b> Robes, slippers, the whole thing. There's a champagne and nails bar by the entrance, which I'm mentioning purely as information.</li>
-          <li><b>Sixty minutes of massage, side by side.</b> Same room, same table height, warm aromatherapy oils. Neither of us has to make conversation for an hour.</li>
-          <li><b>Then the circuit.</b> Turkish bath, sauna, steam room, sensory showers, the ice fountain when the sauna gets ridiculous, the salt room when we want to lie down again.</li>
-          <li><b>The heated indoor pool.</b> Waterfalls, lagoons, loungers. This is where the afternoon quietly disappears.</li>
-          <li><b>Out into Funchal at dusk</b> feeling like a different species. Savoy Palace is on Avenida do Infante, so we're a five-minute walk from dinner wherever we end up.</li>
-        </ol>
+    <div class="story">
+      <div class="plan">
+        <p class="plan-title">Nothing complicated</p>
+        <p>We turn up late morning, change into robes and disappear for an hour-long massage in the same room.</p>
+        <p>After that, we can move slowly through the spa circuit or do absolutely nothing by the pool. There is no correct order.</p>
+        <p>When we are ready, we walk back into Funchal and find somewhere for dinner.</p>
       </div>
-      <div class="facts">
-        <dl>
-          <dt>Where</dt><dd>Laurea Spa, Savoy Palace<br>Avenida do Infante 25, Funchal</dd>
-          <dt>Size</dt><dd>3,100 m² · 13 treatment rooms</dd>
-          <dt>Open</dt><dd>10:00 – 20:00, daily</dd>
-          <dt>Awards</dt><dd>Portugal's Best Hotel Spa — World Spa Awards 2021, 2024, 2025</dd>
-          <dt>Also on site</dt><dd>Zerobody dry float therapy — floating on warm water without getting wet, if we're feeling experimental</dd>
-        </dl>
+      <div class="details">
+        <span class="label">Practical bits</span>
+        <p><strong>Laurea Spa, Savoy Palace</strong><br>60-minute couples massage<br>Full spa access afterwards<br>Open daily, 10:00–20:00</p>
       </div>
     </div>
 
-    <p class="quote">The forest-inspired thing isn't marketing. They built the whole place around the Laurissilva — the scent, the greens, the water. It's the island, indoors, at body temperature.<span>Why I picked it</span></p>
+    <p class="why"><span class="label">Why this one</span>Because I want one whole day where neither of us has to decide anything.</p>
 
     <button class="pick" type="button" data-c="a">Choose the slow morning</button>
   </section>
 
   <!-- ============ TWO ============ -->
-  <section class="opt-block rev" id="two">
+  <section class="opt-block" id="two">
     <div class="numrow">
       <span class="num">Option two</span>
-      <span class="chip b">moving water</span>
     </div>
     <h2 class="opt-t">Sugar, then sunset</h2>
-    <p class="lead">The seabed drops away almost vertically a few hundred metres off Madeira's coast, which is why <b>more than twenty-five species of whale and dolphin</b> pass through here without ever coming near a harbour. The version I keep picturing starts in Funchal, learning to make pastéis de nata properly, then heads west to Calheta for a small yacht and the last light of the day.</p>
+    <p class="lead">We make pastéis de nata in Funchal, drive west to Calheta, then spend the last two and a half hours of the day on the water. If dolphins appear, brilliant. If not, we still get sunset over the Atlantic.</p>
 
     <div class="hero-img">
       <img id="hero2" src="img/boat-sunset.jpg" alt="Sunset over the Atlantic from the water off Madeira" width="1024" height="575" decoding="async">
@@ -266,73 +224,35 @@
     </div>
     <div class="strip">
       <div class="tile"><img src="img/boat-dolphins.jpg" alt="A pod of common dolphins beside the On Tales boat" width="1024" height="683" loading="lazy" decoding="async"></div>
-      <div class="tile"><img src="img/boat-whale.jpg" alt="A humpback whale breaching off Madeira" width="1024" height="681" loading="lazy" decoding="async"></div>
       <div class="tile"><img src="img/pastry-class.jpg" alt="Hands filling pastry shells during the pastéis de nata class" width="600" height="600" loading="lazy" decoding="async"></div>
-      <div class="tile"><img src="img/pastry-tray.jpg" alt="A tray of warm pastéis de nata fresh from the oven" width="600" height="600" loading="lazy" decoding="async"></div>
-      <div class="tile"><img src="img/pastry-making.jpg" alt="Shaping pastry dough around the baking tins" width="600" height="600" loading="lazy" decoding="async"></div>
       <div class="tile"><img src="img/pastry-finished.jpg" alt="Finished pastéis de nata dusted with cinnamon" width="600" height="600" loading="lazy" decoding="async"></div>
     </div>
 
-    <div class="cols">
-      <div>
-        <p class="h3">How the day goes</p>
-        <ol class="beats">
-          <li><b>Funchal first, and a kitchen.</b> Six people max, in a room done up like someone's grandmother's house. We make the custard, fill the pastry, and eat them still too hot to hold.</li>
-          <li><b>Unlimited wine throughout.</b> Which is a design decision I respect. We take home whatever we don't finish.</li>
-          <li><b>Then we head west.</b> Calheta is about an hour down the coast, and the drive itself is half the point. We reach the marina fifteen minutes early and meet the crew at their little shop at the end.</li>
-          <li><b>Onto the yacht.</b> Twelve people maximum, usually six. Sofas, a front deck to lie on, towels and blankets and snorkelling gear all just there. Drinks are on them.</li>
-          <li><b>A spotter on the mountain radios the captain.</b> No sonar, no drones, no chasing — that's regulated here, and this crew is unusually serious about it. Pilot whales and bottlenose dolphins live here year-round; in October there's a real chance of sperm whales too.</li>
-          <li><b>We finish on the water.</b> Maybe we anchor in a bay and get in — it's still around 23°C in October. Either way, the last part of the day is the west coast turning gold around us.</li>
-        </ol>
+    <div class="story">
+      <div class="plan">
+        <p class="plan-title">Pastéis first, then west</p>
+        <p>We start in a little kitchen in Funchal, make the custard, fill the pastry shells and eat them while they are still too hot.</p>
+        <p>Then we take the coast road west. Calheta is about an hour away, and the drive is part of the day rather than dead time between things.</p>
+        <p>The boat is small, the drinks are included, and we stay out until the light goes. Wildlife would be a bonus, not the whole reason to go.</p>
       </div>
-      <div class="facts">
-        <dl>
-          <dt>The boat</dt><dd>On Tales, Marina da Calheta<br>2.5 hours · max 12 guests</dd>
-          <dt>Rated</dt><dd>4.9 / 5 across 1,272 reviews · Tripadvisor Travellers' Choice</dd>
-          <dt>The kitchen</dt><dd>1.5 hours · max 6 people · hotel pickup included<br>Centro Comercial Olimpo, Funchal</dd>
-          <dt>Included on board</dt><dd>Drinks, snorkelling kit, towels, blankets, hot shower, and the crew's photos of the day sent afterwards</dd>
-          <dt>Honest bit</dt><dd>Wildlife isn't guaranteed and they refuse to pretend otherwise. Morning odds are better than evening.</dd>
-        </dl>
+      <div class="details">
+        <span class="label">Practical bits</span>
+        <p><strong>Pastéis class, Funchal</strong><br>1.5 hours<br><br><strong>On Tales, Calheta</strong><br>2.5 hours on the water<br>Sunset has lower sighting odds than morning</p>
       </div>
     </div>
 
-    <div class="opt">
-      <p class="opt-l" id="label-order">Order of the day</p>
-      <div class="pills" data-g="order" role="radiogroup" aria-labelledby="label-order">
-        <button class="pill on" type="button" role="radio" aria-checked="true" data-v="sugar" data-note="Pastéis and wine first, then west to Calheta. We finish on the water as the sun drops — the version I keep picturing.">Pastries first</button>
-        <button class="pill" type="button" role="radio" aria-checked="false" data-v="sea" data-note="Boat first while the sea is calmer and sightings are likelier, then back to Funchal to bake. The stronger animal-spotting choice.">Boat first</button>
-      </div>
-      <p class="pill-note" id="note-order" aria-live="polite">Pastéis and wine first, then west to Calheta. We finish on the water as the sun drops — the version I keep picturing.</p>
-    </div>
-
-    <div class="opt">
-      <p class="opt-l" id="label-time">Time on the water</p>
-      <div class="pills" data-g="time" role="radiogroup" aria-labelledby="label-time">
-        <button class="pill on" type="button" role="radio" aria-checked="true" data-v="pm"
-          data-img="img/boat-sunset.jpg"
-          data-alt="Sunset over the Atlantic from the water off Madeira"
-          data-cap="Sunset — the west coast from the water"
-          data-note="Two and a half hours in this exact light. Fewer sightings than the morning, but the west coast at sunset is genuinely absurd — and we'd be looking at it from the water.">Sunset</button>
-        <button class="pill" type="button" role="radio" aria-checked="false" data-v="am"
-          data-img="img/boat-dolphins.jpg"
-          data-alt="A pod of common dolphins beside the On Tales boat"
-          data-cap="Morning — calmest sea, best chance of this"
-          data-note="Calmer water and the better chance of actually seeing something. The stronger wildlife choice, if that matters more than the sunset.">Morning</button>
-      </div>
-      <p class="pill-note" id="note-time" aria-live="polite">Two and a half hours in this exact light. Fewer sightings than the morning, but the west coast at sunset is genuinely absurd — and we'd be looking at it from the water.</p>
-    </div>
+    <p class="why"><span class="label">Why this one</span>Because I can already picture us on the way back when the coast has gone dark.</p>
 
     <button class="pick" type="button" data-c="b">Choose the sunset day</button>
   </section>
 
   <!-- ============ THREE ============ -->
-  <section class="opt-block rev" id="three">
+  <section class="opt-block" id="three">
     <div class="numrow">
       <span class="num">Option three</span>
-      <span class="chip c">the table</span>
     </div>
     <h2 class="opt-t">The secret garden</h2>
-    <p class="lead">There's an unmarked door in a concrete wall on Rua dos Ilhéus. You press a buzzer, it clicks open, you climb some steps — and you're in <b>a century-old Madeiran quinta where a family still lives</b>. Ten tables. An open kitchen. Chef Filipe Janeiro cooking a tasting menu out of his own garden, and coming out between courses to tell you about each one himself.</p>
+    <p class="lead">We ring the bell beside an unmarked door, have a drink in the garden, then sit beside the open kitchen for a tasting menu made from whatever is growing on the island that week.</p>
 
     <div class="hero-img">
       <img src="img/gazebo-course.jpg" alt="Gazebo's intimate dining room inside the family quinta" width="900" height="900" loading="lazy" decoding="async">
@@ -340,47 +260,24 @@
     </div>
     <div class="strip">
       <div class="tile"><img src="img/gazebo-exterior.jpg" alt="Wine glasses waiting on a garden table at Gazebo" width="900" height="900" loading="lazy" decoding="async"></div>
-      <div class="tile"><img src="img/gazebo-plating.jpg" alt="A seasonal tasting-menu course served at Gazebo" width="900" height="900" loading="lazy" decoding="async"></div>
       <div class="tile"><img src="img/gazebo-dish-one.jpg" alt="A table set among the quinta's tropical garden" width="900" height="900" loading="lazy" decoding="async"></div>
-      <div class="tile"><img src="img/gazebo-dish-two.jpg" alt="An edible flower arranged beside the wine glasses" width="900" height="900" loading="lazy" decoding="async"></div>
       <div class="tile"><img src="img/gazebo-detail.jpg" alt="A garden-led course from Gazebo's tasting menu" width="900" height="900" loading="lazy" decoding="async"></div>
-      <div class="tile"><img src="img/gazebo-hero.jpg" alt="The Gazebo wordmark" width="1400" height="900" loading="lazy" decoding="async"></div>
     </div>
 
-    <div class="cols">
-      <div>
-        <p class="h3">How the evening goes</p>
-        <ol class="beats">
-          <li><b>19:30, one sitting.</b> Everyone arrives together. There's a garden and a patio to have a drink in before we sit down.</li>
-          <li><b>The kitchen is in the room.</b> Not behind glass — in the room. You watch the whole menu being made while you eat it.</li>
-          <li><b>The menu is seasonal and it's his.</b> As much as possible from the quinta's own garden, the rest from small producers around the island. October means whatever October gives him.</li>
-          <li><b>Filipe comes out.</b> Every review says the same thing — he introduces himself, explains the thinking behind each course, and helps you pick the wine. It reads less like a restaurant and more like being fed in someone's house.</li>
-          <li><b>Two and a half hours, roughly.</b> Then back out through the unmarked door into a normal street, which is the best part.</li>
-        </ol>
+    <div class="story">
+      <div class="plan">
+        <p class="plan-title">Behind the door</p>
+        <p>Everyone arrives for the same 19:30 sitting, so we start with a drink in the garden while the room fills up.</p>
+        <p>The kitchen is part of the dining room. We can watch the whole menu being made, and Filipe brings the courses out himself.</p>
+        <p>A couple of hours later, we step back through the same hidden door and somehow we are on a normal street in Funchal again.</p>
       </div>
-      <div class="facts">
-        <dl>
-          <dt>Where</dt><dd>Gazebo, Rua dos Ilhéus 30<br>São Martinho, Funchal</dd>
-          <dt>When</dt><dd>One sitting at 19:30<br>Tuesday to Saturday</dd>
-          <dt>Room</dt><dd>Ten tables, open kitchen, garden and patio</dd>
-          <dt>Recognition</dt><dd>MICHELIN Guide 2026 · 1 Sol, Guía Repsol 2026 · 4.9 / 5 on Google</dd>
-          <dt>Chef</dt><dd>Filipe Janeiro — started out as a private chef, opened this in his family's own quinta</dd>
-        </dl>
+      <div class="details">
+        <span class="label">Practical bits</span>
+        <p><strong>Gazebo, Funchal</strong><br>One sitting at 19:30<br>Tuesday to Saturday<br><br>I'd book North to South: six courses with the wine pairing</p>
       </div>
     </div>
 
-    <div class="opt">
-      <p class="opt-l" id="label-table">Which menu</p>
-      <div class="pills" data-g="table" role="radiogroup" aria-labelledby="label-table">
-        <button class="pill on" type="button" role="radio" aria-checked="true" data-v="north"
-          data-note="Six courses, and a wine chosen specifically for each one. Filipe walks you through the pairing at the table. Shorter, but nothing is left for us to figure out — the food and the wine arrive as a single idea. This is the one I'd pick.">North to South · six courses with wine</button>
-        <button class="pill" type="button" role="radio" aria-checked="false" data-v="east"
-          data-note="Nine courses, the long way round the island. Three more plates than the other menu, and we choose our own bottle from their list rather than taking the pairing. The one to pick if you want the evening to keep unfolding.">East to West · nine courses</button>
-      </div>
-      <p class="pill-note" id="note-table" aria-live="polite">Six courses, and a wine chosen specifically for each one. Filipe walks you through the pairing at the table. Shorter, but nothing is left for us to figure out — the food and the wine arrive as a single idea. This is the one I'd pick.</p>
-    </div>
-
-    <p class="quote">I celebrated my birthday at Gazebo and it turned out to be one of the most unforgettable evenings. The chef greeted us on arrival and came back later to help us choose the wine.<span>From a review, which is partly why we're here</span></p>
+    <p class="why"><span class="label">Why this one</span>Because this feels like the sort of place we'd still be talking about years later.</p>
 
     <button class="pick" type="button" data-c="c">Choose the secret garden</button>
   </section>
@@ -407,7 +304,6 @@
   var cur=document.getElementById('curtain');
   var main=document.getElementById('main');
   var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var st={order:'sugar',time:'pm',table:'north'};
 
   if(!reduced){
     var cols=['#DB5C84','#E8763A','#E0AE54','#7FB08A'];
@@ -433,21 +329,6 @@
     if(img.complete&&img.naturalWidth===0) markMissing(img);
   });
 
-  function observe(){
-    var els=document.querySelectorAll('.rev');
-    if(!('IntersectionObserver' in window)){
-      els.forEach(function(e){e.classList.add('in');}); return;
-    }
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
-      });
-    },{threshold:0.08,rootMargin:'0px 0px -60px 0px'});
-    els.forEach(function(e){io.observe(e);});
-  }
-
-  observe();
-
   function showMain(){
     cur.style.display='none';
     main.style.display='block';
@@ -463,70 +344,19 @@
     },reduced?0:520);
   });
 
-  function swapImg(img,src){
-    img.hidden=false;
-    img.closest('.hero-img').classList.remove('image-missing');
-    img.style.transition='opacity .25s ease';
-    img.style.opacity='0';
-    setTimeout(function(){ img.src=src; img.style.opacity='1'; },reduced?0:250);
-  }
-
-  function selectPill(g,b,focus){
-    g.querySelectorAll('.pill').forEach(function(x){
-      var selected=x===b;
-      x.classList.toggle('on',selected);
-      x.setAttribute('aria-checked',selected?'true':'false');
-      x.tabIndex=selected?0:-1;
-    });
-    if(focus) b.focus();
-    var k=g.getAttribute('data-g'),v=b.getAttribute('data-v');
-    st[k]=v;
-    var note=document.getElementById('note-'+k);
-    if(note&&b.getAttribute('data-note')) note.textContent=b.getAttribute('data-note');
-    if(k==='time'){
-      var hero=document.getElementById('hero2');
-      if(b.getAttribute('data-img')) swapImg(hero,b.getAttribute('data-img'));
-      if(b.getAttribute('data-alt')) hero.alt=b.getAttribute('data-alt');
-      if(b.getAttribute('data-cap')) document.getElementById('cap2').textContent=b.getAttribute('data-cap');
-      document.querySelector('[data-c="b"]').textContent=v==='pm'?'Choose the sunset day':'Choose salt and sugar';
-    }
-  }
-
-  document.querySelectorAll('.pills').forEach(function(g){
-    g.addEventListener('click',function(e){
-      var b=e.target.closest('.pill'); if(!b) return;
-      selectPill(g,b,false);
-    });
-    g.addEventListener('keydown',function(e){
-      if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) return;
-      e.preventDefault();
-      var buttons=Array.from(g.querySelectorAll('.pill'));
-      var current=buttons.indexOf(document.activeElement);
-      var step=(e.key==='ArrowRight'||e.key==='ArrowDown')?1:-1;
-      selectPill(g,buttons[(current+step+buttons.length)%buttons.length],true);
-    });
-  });
-
   function copy(c){
     if(c==='a') return {
-      h:'Then we go <i>horizontal</i>.',
-      b:"Noted and locked. I'll ring Laurea nearer the time. Bring nothing, decide nothing.",
+      h:'The slow morning.',
+      b:"Perfect. I'll sort Laurea and the rest of the day is ours.",
       t:'Laurea Spa, Savoy Palace',
-      d:"Couple's massage, 60 minutes, then the run of the place"
+      d:"Couple's massage, then as long as we want in the spa"
     };
     if(c==='b'){
-      var o=st.order==='sea'?'Boat first, pastries after':'Pastries first, boat after';
-      var t=st.time==='am'?'morning on the water':'sunset on the water';
-      var h=st.order==='sugar'&&st.time==='pm'?'Sugar, then <i>sunset</i>.':'Salt <i>and</i> sugar.';
-      return { h:h,
-        b:"Noted and locked. I'll book the kitchen and the boat. Turn up in October in something you don't mind getting flour and sea spray on.",
-        t:'Pastéis de nata + Calheta boat', d:o+' · '+t };
+      return { h:'Sugar, then sunset.',
+        b:"Perfect. I'll book the kitchen and the boat.",
+        t:'Pastéis de nata + Calheta at sunset', d:'Pastries first, then the last light from the water' };
     }
-    var m={
-      north:{t:'Gazebo — North to South',d:'Six courses with wine pairing · 19:30'},
-      east:{t:'Gazebo — East to West',d:'Nine courses · 19:30'}
-    }[st.table];
-    return { h:'A <i>table</i> it is.', b:"Noted and locked. I'll get us the 19:30. Come to October hungry and slightly overdressed.", t:m.t, d:m.d };
+    return { h:'The secret garden.', b:"Perfect. I'll book us the 19:30 and take care of the rest.", t:'Gazebo — North to South', d:'Six courses with wine pairing · 19:30' };
   }
 
   function reveal(c){
@@ -547,7 +377,7 @@
     b.addEventListener('click',function(){
       var c=b.getAttribute('data-c');
       reveal(c);
-      try{ localStorage.setItem('madeira-pick',JSON.stringify({c:c,st:st})); }catch(e){}
+      try{ localStorage.setItem('madeira-pick',JSON.stringify({c:c})); }catch(e){}
     });
   });
 
@@ -557,7 +387,6 @@
     document.querySelector('.head').style.display='block';
     document.querySelector('.nav').style.display='flex';
     document.querySelector('.closer').style.display='block';
-    document.querySelectorAll('.rev').forEach(function(e){e.classList.add('in');});
     try{ localStorage.removeItem('madeira-pick'); }catch(e){}
     document.querySelector('.head').scrollIntoView({behavior:reduced?'auto':'smooth'});
   });
@@ -567,11 +396,6 @@
     if(saved){
       var pick=JSON.parse(saved);
       if(pick&&['a','b','c'].includes(pick.c)){
-        if(pick.st) st=Object.assign(st,pick.st);
-        document.querySelectorAll('.pills').forEach(function(g){
-          var selected=g.querySelector('[data-v="'+st[g.getAttribute('data-g')]+'"]');
-          if(selected) selectPill(g,selected,false);
-        });
         showMain();
         reveal(pick.c);
       }
