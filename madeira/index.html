@@ -43,7 +43,7 @@
   .light-thread span{display:block;width:100%;height:100%;background:var(--light);transform:scaleX(0);transform-origin:left;transition:background .8s var(--ease);will-change:transform}
 
   /* Opening: three fragments of the island, one invitation. */
-  .gift-opening{min-height:100svh;display:grid;grid-template-columns:minmax(280px,.82fr) minmax(460px,1.18fr);align-items:center;gap:clamp(2rem,5vw,7rem);padding:clamp(2rem,6vw,6rem) var(--page-gutter);position:relative;isolation:isolate;background:#08191b;overflow:hidden}
+  .gift-opening{min-height:100svh;display:grid;grid-template-columns:minmax(460px,1fr) minmax(460px,1fr);align-items:center;gap:clamp(2rem,4vw,5rem);padding:clamp(2rem,6vw,6rem) var(--page-gutter);position:relative;isolation:isolate;background:#08191b;overflow:hidden}
   .opening-copy{position:relative;z-index:4;max-width:650px;padding-left:clamp(0px,2vw,2rem)}
   .opening-copy h1{font-family:'Newsreader',serif;font-size:clamp(4rem,8.8vw,6rem);font-weight:500;letter-spacing:-.04em;line-height:.84;margin:0 0 2rem;text-wrap:balance}
   .opening-copy h1 i{display:block;color:var(--candle);font-weight:400}
@@ -98,26 +98,28 @@
   .journey-intro h1{font-family:'Newsreader',serif;font-size:clamp(3.8rem,7vw,6rem);line-height:.87;letter-spacing:-.04em;font-weight:500;max-width:780px;margin:0;text-wrap:balance}
   .journey-intro h1 i{display:block;color:var(--candle);font-weight:400}
   .journey-intro .intro-copy p{font-size:clamp(1rem,1.35vw,1.15rem);line-height:1.72;color:var(--cream-soft);max-width:43ch;margin:0 0 .25rem}
-  .intro-glimpses{max-width:1440px;margin:clamp(3.5rem,6vw,5.5rem) auto 0;display:grid;grid-template-columns:1.18fr .82fr 1fr;gap:clamp(.8rem,1.7vw,1.5rem);align-items:end}
-  .glimpse{display:block;color:var(--cream);text-decoration:none;position:relative;transition:transform .45s var(--ease)}
-  .glimpse:nth-child(2){margin-bottom:clamp(2rem,5vw,4.5rem)}
-  .glimpse:nth-child(3){margin-bottom:clamp(.3rem,1vw,1rem)}
-  .glimpse .media{aspect-ratio:5/4;clip-path:inset(0 0 0 0 round 5px);transition:clip-path .55s var(--ease),filter .55s var(--ease);filter:saturate(.88) brightness(.9)}
-  .glimpse:nth-child(2) .media{aspect-ratio:4/5}
-  .glimpse img{transition:transform .8s var(--ease)}
-  .glimpse:hover{transform:translateY(-8px)}
-  .glimpse:hover .media{clip-path:inset(1.5% 1.5% 1.5% 1.5% round 5px);filter:saturate(1) brightness(1)}
-  .glimpse:hover img{transform:scale(1.035)}
-  .glimpse-caption{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;align-items:center;padding-top:.9rem;border-top:1px solid currentColor;margin-top:.75rem}
-  .glimpse-caption strong{font-family:'Newsreader',serif;font-size:clamp(1.35rem,2vw,1.8rem);font-weight:500;line-height:1.05}
-  .glimpse-caption small{grid-column:1;color:var(--cream-soft);font-size:.78rem;line-height:1.35}
-  .glimpse-caption span{grid-column:2;grid-row:1 / span 2;font-size:1.1rem;transition:transform .35s var(--ease)}
-  .glimpse:hover .glimpse-caption span{transform:translate(4px,-4px)}
+  .intro-glimpses{width:calc(100% + (var(--page-gutter) * 2));margin:clamp(4rem,7vw,6rem) calc(var(--page-gutter) * -1) 0;display:grid;grid-template-columns:1fr;gap:2px}
+  .glimpse{min-height:clamp(520px,68svh,760px);display:block;color:var(--cream);text-decoration:none;position:relative;isolation:isolate;overflow:hidden}
+  .glimpse:nth-child(2),.glimpse:nth-child(3){margin:0}
+  .glimpse .media,.glimpse:nth-child(2) .media{position:absolute;inset:0;aspect-ratio:auto;clip-path:none;filter:saturate(.82) brightness(.72);transition:filter .8s var(--ease)}
+  .glimpse .media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,18,20,.86) 0%,rgba(5,18,20,.34) 52%,rgba(5,18,20,.08) 100%)}
+  .glimpse:nth-child(even) .media::after{background:linear-gradient(270deg,rgba(9,18,25,.88) 0%,rgba(9,18,25,.3) 54%,rgba(9,18,25,.08) 100%)}
+  .glimpse img{transition:transform 1.1s var(--ease);transform:scale(1.015)}
+  .glimpse:hover .media{clip-path:none;filter:saturate(1) brightness(.86)}
+  .glimpse:hover img{transform:scale(1.055)}
+  .glimpse-caption{position:absolute;z-index:2;left:var(--page-gutter);right:var(--page-gutter);bottom:clamp(2.5rem,6vw,5.5rem);display:grid;grid-template-columns:minmax(0,720px) auto;gap:.5rem 2rem;align-items:end;padding-top:1.25rem;border-top:1px solid currentColor;margin:0}
+  .glimpse:nth-child(even) .glimpse-caption{text-align:right;justify-content:end;grid-template-columns:auto minmax(0,720px)}
+  .glimpse-caption strong{font-family:'Newsreader',serif;font-size:clamp(3.6rem,7vw,6rem);font-weight:500;letter-spacing:-.04em;line-height:.86;color:var(--cream)}
+  .glimpse-caption small{grid-column:1;color:var(--cream);font-size:clamp(.9rem,1.25vw,1.08rem);line-height:1.45;letter-spacing:.02em}
+  .glimpse-caption span{grid-column:2;grid-row:1 / span 2;font-size:1.8rem;transition:transform .45s var(--ease)}
+  .glimpse:nth-child(even) .glimpse-caption strong,.glimpse:nth-child(even) .glimpse-caption small{grid-column:2}
+  .glimpse:nth-child(even) .glimpse-caption span{grid-column:1;grid-row:1 / span 2}
+  .glimpse:hover .glimpse-caption span{transform:translate(7px,-7px)}
   .glimpse-spa{color:var(--forest)}
   .glimpse-sunset{color:var(--sun)}
   .glimpse-dinner{color:var(--candle)}
   .glimpse-caption strong{color:var(--cream)}
-  .intro-note{max-width:1240px;margin:1.8rem auto 0!important;color:rgba(247,240,227,.56)!important;font-family:'Caveat',cursive;font-size:1.35rem!important;line-height:1.3!important}
+  .intro-note{max-width:1240px;margin:2.4rem auto 0!important;color:rgba(247,240,227,.64)!important;font-family:'Caveat',cursive;font-size:1.45rem!important;line-height:1.3!important}
   .enhanced .intro-copy,.enhanced .glimpse{opacity:0;translate:0 24px;filter:blur(7px)}
   .enhanced .journey.on .intro-copy{animation:introArrive .75s .05s var(--ease) forwards}
   .enhanced .journey.on .glimpse{animation:introArrive .78s var(--ease) forwards}
@@ -127,9 +129,9 @@
   @keyframes introArrive{to{opacity:1;translate:0 0;filter:blur(0)}}
 
   .chapter{--chapter-accent:var(--cream);--chapter-rule:rgba(247,240,227,.28);position:relative;min-height:100svh;padding:clamp(5rem,9vw,9rem) var(--page-gutter);overflow:hidden;isolation:isolate;scroll-margin-top:64px;border-top:5px solid var(--chapter-accent)}
-  .chapter-heading{display:grid;grid-template-columns:minmax(110px,.24fr) minmax(0,1fr);grid-template-rows:auto auto;gap:.6rem clamp(2rem,5vw,5rem);align-items:end;border-top:1px solid var(--chapter-rule);padding-top:clamp(1.8rem,3vw,3rem)}
+  .chapter-heading{display:grid;grid-template-columns:minmax(110px,.24fr) minmax(0,1fr);grid-template-rows:auto auto auto;gap:.6rem clamp(2rem,5vw,5rem);align-content:end;align-items:end;border-top:0;padding:clamp(5rem,8vw,8rem) var(--page-gutter);position:relative;isolation:isolate;overflow:hidden;min-height:calc(100svh - 64px)}
   .chapter-index{grid-column:1;grid-row:1 / span 2;align-self:start;font-family:'Newsreader',serif;font-size:clamp(6rem,12vw,11rem);font-weight:400;line-height:.72;letter-spacing:-.065em;color:var(--chapter-accent);font-variant-numeric:lining-nums tabular-nums}
-  .chapter-heading h2,.chapter-heading .promise{grid-column:2}
+  .chapter-heading h2,.chapter-heading .promise,.chapter-heading .chapter-proof{grid-column:2;position:relative;z-index:2}
   .chapter h2{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(3.3rem,7vw,6rem);line-height:.88;letter-spacing:-.04em;margin:0;text-wrap:balance}
   .chapter figure{margin:0}
   .chapter .promise{font-family:'Newsreader',serif;font-size:clamp(1.3rem,2.1vw,1.8rem);line-height:1.35;color:var(--cream);margin:0}
@@ -149,12 +151,36 @@
   .story-copy p+p{margin-top:1rem}
   .scene-caption{color:rgba(247,240,227,.58);font-size:.74rem;line-height:1.45;margin-top:.7rem;max-width:54ch}
 
+  /* Each option opens like a film, then resolves into the editorial story. */
+  .chapter-cinema{max-width:none!important;margin:0!important}
+  .chapter-cinema::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(3,17,17,.9) 0%,rgba(3,17,17,.52) 46%,rgba(3,17,17,.13) 76%),linear-gradient(0deg,rgba(3,17,17,.68),transparent 46%)}
+  .cinema-media{position:absolute;z-index:-2;inset:0;overflow:hidden;background:var(--night)}
+  .cinema-media img,.cinema-media video{width:100%;height:100%;object-fit:cover;transform:scale(1.035)}
+  .cinema-video{display:block}
+  .chapter-cinema .chapter-index{position:relative;z-index:2;align-self:end;color:var(--cream);opacity:.78;text-shadow:0 4px 22px rgba(0,0,0,.34)}
+  .chapter-cinema h2{color:var(--cream);max-width:860px;text-shadow:0 5px 28px rgba(0,0,0,.32)}
+  .chapter-cinema .promise{max-width:670px;margin-top:1rem;color:var(--cream)}
+  .chapter-proof{max-width:680px;margin:1.2rem 0 0;color:var(--cream-soft);font-size:.88rem!important;line-height:1.45!important;letter-spacing:.07em;text-transform:uppercase}
+  .cinema-cutaway{position:absolute;z-index:1;right:clamp(2rem,7vw,8rem);top:clamp(3rem,8vw,7rem);width:min(24vw,330px);aspect-ratio:4/5;border:7px solid rgba(247,240,227,.9);box-shadow:14px 22px 50px rgba(0,0,0,.3);transform:rotate(2.5deg);overflow:hidden}
+  .cinema-cutaway img{width:100%;height:100%;object-fit:cover}
+  .guide-lockup{position:absolute;z-index:2;right:var(--page-gutter);top:clamp(4rem,8vw,7rem);display:flex;align-items:center;gap:1.4rem;color:var(--cream)}
+  .guide-lockup img{display:block;max-height:92px;width:auto}
+  .guide-lockup img:last-child{max-width:134px}
+  .guide-lockup span{max-width:170px;font-family:'Newsreader',serif;font-size:1.05rem;line-height:1.25}
+
+  @supports (animation-timeline:view()){
+    .chapter-cinema .cinema-media img,.chapter-cinema .cinema-media video{animation:cinemaDrift linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+    .glimpse .media img{animation:previewDrift linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+  }
+  @keyframes cinemaDrift{from{transform:scale(1.09) translateY(-2.5%)}to{transform:scale(1.04) translateY(2.5%)}}
+  @keyframes previewDrift{from{transform:scale(1.08) translateY(-2%)}to{transform:scale(1.035) translateY(2%)}}
+
   /* Forest light: leaving the city above, finding the forest below. */
-  .chapter-spa{--chapter-accent:#8cbea0;--chapter-rule:rgba(140,190,160,.38);background:radial-gradient(circle at 14% 0%,rgba(140,190,160,.16),transparent 26%),#0a2421;padding-left:0;padding-right:0}
-  .spa-heading{max-width:1240px;margin:0 auto;padding:clamp(1.8rem,3vw,3rem) var(--page-gutter) clamp(3rem,6vw,5.5rem)}
+  .chapter-spa{--chapter-accent:#8cbea0;--chapter-rule:rgba(140,190,160,.38);background:radial-gradient(circle at 14% 0%,rgba(140,190,160,.16),transparent 26%),#0a2421;padding:0 0 clamp(5rem,9vw,9rem)}
+  .spa-heading{max-width:none;margin:0;padding:clamp(5rem,8vw,8rem) var(--page-gutter)}
   .spa-heading h2{color:#eff4e9}
   .spa-heading .promise{max-width:680px;margin-top:1.5rem}
-  .spa-place{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(320px,.62fr);gap:clamp(2.5rem,6vw,6rem);align-items:end;padding:0 var(--page-gutter)}
+  .spa-place{max-width:1440px;margin:clamp(6rem,10vw,9rem) auto 0;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(320px,.62fr);gap:clamp(2.5rem,6vw,6rem);align-items:end;padding:0 var(--page-gutter)}
   .spa-hotel{aspect-ratio:3/2;clip-path:inset(0 5% 0 0)}
   .spa-hotel img{object-position:center 54%}
   .spa-place-copy{max-width:480px;padding-bottom:clamp(1rem,4vw,4rem)}
@@ -179,11 +205,11 @@
   .spa-after-copy .choose{margin-top:1.6rem}
 
   /* Sunset light: the afternoon opens from a kitchen onto the Atlantic. */
-  .chapter-sunset{--chapter-accent:#f19a57;--chapter-rule:rgba(241,154,87,.42);background:radial-gradient(ellipse at 78% 0%,rgba(241,154,87,.2),transparent 30%),#111d25;padding-left:0;padding-right:0}
-  .sunset-heading{max-width:1200px;margin:0 auto;padding:clamp(1.8rem,3vw,3rem) var(--page-gutter) clamp(2.5rem,5vw,5rem)}
+  .chapter-sunset{--chapter-accent:#f19a57;--chapter-rule:rgba(241,154,87,.42);background:radial-gradient(ellipse at 78% 0%,rgba(241,154,87,.2),transparent 30%),#111d25;padding:0 0 clamp(5rem,9vw,9rem)}
+  .sunset-heading{max-width:none;margin:0;padding:clamp(5rem,8vw,8rem) var(--page-gutter)}
   .sunset-heading h2{max-width:760px}
   .sunset-heading .promise{max-width:650px;margin-top:1.5rem}
-  .kitchen-story{max-width:1200px;margin:0 auto;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.72fr);gap:clamp(3rem,8vw,8rem);align-items:center}
+  .kitchen-story{max-width:1200px;margin:clamp(6rem,10vw,9rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.72fr);gap:clamp(3rem,8vw,8rem);align-items:center}
   .kitchen-hero{aspect-ratio:4/3;clip-path:inset(0 5% 0 0)}
   .kitchen-copy{max-width:500px}
   .pastry-table{max-width:1360px;margin:clamp(5rem,9vw,8rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:.78fr 1.18fr .78fr;gap:clamp(.65rem,1.5vw,1.15rem);align-items:center}
@@ -216,11 +242,11 @@
   .sea-ending-copy .choose{margin-top:1.5rem}
 
   /* Candlelight: through the quiet door and into a family room. */
-  .chapter-dinner{--chapter-accent:#e8bf67;--chapter-rule:rgba(232,191,103,.42);background:radial-gradient(circle at 22% 0%,rgba(211,109,125,.14),transparent 24%),radial-gradient(circle at 78% 0%,rgba(232,191,103,.14),transparent 28%),#211914;padding-left:0;padding-right:0}
-  .dinner-heading{max-width:1200px;margin:0 auto;padding:clamp(1.8rem,3vw,3rem) var(--page-gutter) clamp(3rem,6vw,5.5rem)}
+  .chapter-dinner{--chapter-accent:#e8bf67;--chapter-rule:rgba(232,191,103,.42);background:radial-gradient(circle at 22% 0%,rgba(211,109,125,.14),transparent 24%),radial-gradient(circle at 78% 0%,rgba(232,191,103,.14),transparent 28%),#211914;padding:0 0 clamp(5rem,9vw,9rem)}
+  .dinner-heading{max-width:none;margin:0;padding:clamp(5rem,8vw,8rem) var(--page-gutter)}
   .dinner-heading .promise{margin-top:1.5rem}
   .dinner-heading h2{color:#fff1d3}
-  .dinner-arrival{max-width:1400px;margin:0 auto;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.48fr) minmax(320px,.62fr);gap:clamp(3rem,7vw,7rem);align-items:center}
+  .dinner-arrival{max-width:1400px;margin:clamp(6rem,10vw,9rem) auto 0;padding:0 var(--page-gutter);display:grid;grid-template-columns:minmax(0,1.48fr) minmax(320px,.62fr);gap:clamp(3rem,7vw,7rem);align-items:center}
   .gazebo-garden{aspect-ratio:4/3;clip-path:inset(0 5% 0 0)}
   .dinner-arrival-copy{max-width:500px}
   .dinner-arrival-copy .practical{margin-top:1.5rem}
@@ -231,6 +257,15 @@
   .menu-story p{font-size:clamp(1.05rem,1.55vw,1.22rem);line-height:1.75;color:#d7d1be;margin:0}
   .menu-story p+p{margin-top:1.25rem}
   .menu-story .menu-recommendation{font-family:'Newsreader',serif;font-size:clamp(1.5rem,2.5vw,2rem);font-style:italic;line-height:1.45;color:var(--cream);margin-top:2rem}
+  .recognition-spread{max-width:1600px;margin:clamp(7rem,12vw,11rem) auto 0;padding:clamp(4rem,7vw,7rem) var(--page-gutter);display:grid;grid-template-columns:minmax(260px,.7fr) minmax(0,1.3fr);gap:clamp(4rem,9vw,10rem);align-items:center;background:#4a2523;color:#fff5e8}
+  .recognition-marks{display:flex;align-items:center;justify-content:center;gap:clamp(1.5rem,3vw,3rem)}
+  .recognition-marks figure{margin:0;text-align:center}
+  .recognition-marks img{height:clamp(104px,12vw,164px);width:auto;margin:0 auto}
+  .recognition-marks figure:last-child img{max-width:210px;object-fit:contain}
+  .recognition-marks figcaption{margin-top:.9rem;color:#f1d9c4;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+  .recognition-copy{max-width:690px}
+  .recognition-copy h3{font-size:clamp(3.2rem,5.6vw,5.5rem);line-height:.9;color:#fff5e8}
+  .recognition-copy p{max-width:58ch;color:#f3ded0;font-size:clamp(1rem,1.35vw,1.18rem);line-height:1.7}
   .dinner-ending{max-width:1440px;margin:clamp(7rem,11vw,10rem) auto 0;padding:0 var(--page-gutter)}
   .dinner-food{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:420px 340px;gap:.75rem}
   .dinner-food figure:nth-child(1){grid-column:1 / 8;grid-row:1;clip-path:inset(3% 0)}
@@ -238,9 +273,6 @@
   .dinner-food figure:nth-child(3){grid-column:1 / 5;grid-row:2;clip-path:inset(0 4%)}
   .dinner-food figure:nth-child(4){grid-column:5 / 8;grid-row:2;clip-path:inset(4% 0)}
   .dinner-ending-copy{max-width:700px;margin:clamp(3.5rem,6vw,6rem) 5% 0 auto}
-  .dinner-recognition{margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid var(--chapter-rule)}
-  .dinner-recognition p{color:#e4d9c4}
-  .dinner-recognition p+p{margin-top:1rem}
   .dinner-ending-copy .personal{margin-top:1.7rem}
   .dinner-ending-copy .choose{margin-top:1.5rem}
 
@@ -381,8 +413,8 @@
 
 <section class="gift-opening" id="opening" aria-labelledby="openingTitle">
   <div class="opening-copy">
-    <h1 id="openingTitle">Linda, this is your <i>birthday present.</i></h1>
-    <p>It is waiting in <strong>Madeira, in October</strong>. Inside are three plans. Open it, have a proper look, then choose your favourite. I'll sort out everything else.</p>
+    <h1 id="openingTitle">Linda, your birthday gift is <i>waiting in Madeira.</i></h1>
+    <p>I narrowed it down to three very different ideas. Have a proper look at all of them, then choose the one you want most. <strong>That one is the gift.</strong> I'll sort out everything else.</p>
     <p class="opening-sign">from Andris</p>
     <button class="open-gift" id="openGift" type="button">Open your present <span aria-hidden="true">→</span></button>
   </div>
@@ -412,25 +444,31 @@
     <div class="intro-glimpses" aria-label="A first look at the three gift options">
       <a class="glimpse glimpse-spa" href="#spa" aria-label="Go to the Laurea spa option">
         <figure class="media"><img src="img/spa-pool.jpg" alt="The warm indoor lagoon pool at Laurea Spa" width="1400" height="700" decoding="async"></figure>
-        <div class="glimpse-caption"><strong>A day at Laurea</strong><small>Massage · spa circuit · no rush</small><span aria-hidden="true">↘</span></div>
+        <div class="glimpse-caption"><strong>A day at Laurea</strong><small>Portugal's Best Hotel Spa · one-hour massage together · the entire circuit afterwards</small><span aria-hidden="true">↘</span></div>
       </a>
       <a class="glimpse glimpse-sunset" href="#sunset" aria-label="Go to the pastéis and sunset boat option">
         <figure class="media"><img src="img/boat-gringo.jpg" alt="Gringo, the On Tales yacht, anchored off Madeira" width="1400" height="787" loading="lazy" decoding="async"></figure>
-        <div class="glimpse-caption"><strong>Pastéis, then sunset</strong><small>Make · taste · sail</small><span aria-hidden="true">↘</span></div>
+        <div class="glimpse-caption"><strong>Pastéis, then sunset</strong><small>One of Queroo's most popular experiences · warm pastéis · Gringo on the Atlantic</small><span aria-hidden="true">↘</span></div>
       </a>
       <a class="glimpse glimpse-dinner" href="#dinner" aria-label="Go to the Gazebo dinner option">
         <figure class="media"><img src="img/gazebo-exterior.jpg" alt="Wine glasses waiting in Gazebo's tropical garden" width="900" height="900" loading="lazy" decoding="async"></figure>
-        <div class="glimpse-caption"><strong>The secret garden</strong><small>Hidden door · six or nine courses</small><span aria-hidden="true">↘</span></div>
+        <div class="glimpse-caption"><strong>The secret garden</strong><small>Michelin Guide · one Sol from Guía Repsol · 9.5 from verified diners</small><span aria-hidden="true">↘</span></div>
       </a>
     </div>
     <p class="intro-note">Start wherever your eye goes first.</p>
   </section>
 
   <section class="chapter chapter-spa" id="spa" data-light="spa" aria-labelledby="spaTitle">
-    <header class="chapter-heading spa-heading">
+    <header class="chapter-heading chapter-cinema spa-heading">
+      <div class="cinema-media" aria-hidden="true">
+        <video class="cinema-video" muted loop playsinline preload="metadata" poster="img/spa-pool.jpg">
+          <source src="img/laurea-film.mp4" type="video/mp4">
+        </video>
+      </div>
       <span class="chapter-index" aria-hidden="true">01</span>
       <h2 id="spaTitle" tabindex="-1">A day at Laurea</h2>
       <p class="promise">A one-hour massage together, followed by as much time in the spa as we want.</p>
+      <p class="chapter-proof">Portugal's Best Hotel Spa · World Spa Awards · 2021, 2024 and 2025</p>
     </header>
     <div class="spa-place">
       <figure>
@@ -477,16 +515,23 @@
         <p>A treatment of sixty minutes includes the full spa circuit. We can move between the sauna, steam room and jacuzzi, cool off under the sensory showers or at the ice fountain, then settle into the heated lagoon pool. When even that feels too active, there is a halotherapy salt room and a separate relaxation room with warm loungers.</p>
         <p>There is no countdown after the massage and no second booking to rush towards. Laurea has been named Portugal's Best Hotel Spa in 2021, 2024 and 2025, but the reason I chose it is simpler: you love spas, this one is genuinely unusual, and we could spend the afternoon finding our favourite corner of it together.</p>
         <p class="personal">We arrive from the middle of Funchal and come back out hours later feeling like the city has been somewhere else entirely.</p>
-        <button class="choose" type="button" data-choice="a">This one: Laurea <span aria-hidden="true">→</span></button>
+        <button class="choose" type="button" data-choice="a">Choose Laurea <span aria-hidden="true">→</span></button>
       </div>
     </div>
   </section>
 
   <section class="chapter chapter-sunset" id="sunset" data-light="sunset" aria-labelledby="sunsetTitle">
-    <header class="chapter-heading sunset-heading">
+    <header class="chapter-heading chapter-cinema sunset-heading">
+      <div class="cinema-media" aria-hidden="true">
+        <video class="cinema-video" muted loop playsinline preload="metadata" poster="img/boat-sunset.jpg">
+          <source src="img/gringo-film.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figure class="cinema-cutaway" aria-hidden="true"><img src="img/pastry-class.jpg" alt="" width="600" height="600"></figure>
       <span class="chapter-index" aria-hidden="true">02</span>
       <h2 id="sunsetTitle" tabindex="-1">Pastéis, then sunset</h2>
       <p class="promise">We make pastéis de nata in Funchal, then head west for a sunset trip on the water.</p>
+      <p class="chapter-proof">One of Queroo's most popular Madeira food experiences · then two and a half hours aboard Gringo</p>
     </header>
     <div class="kitchen-story">
       <figure>
@@ -536,16 +581,22 @@
         <p>Whatever we find, the ride back is timed around sunset. We will have made something, eaten it, crossed the island and finished the day on the Atlantic. That is why this one feels like an adventure rather than two activities bundled together.</p>
         <p class="personal">I mostly like the thought of us comparing our pastéis in the afternoon and ending up on the front of this boat a few hours later.</p>
         <p class="practical"><strong>Queroo</strong> · Centro Comercial Olimpo, Funchal<br><strong>On Tales</strong> · Marina da Calheta · sunset trip on Gringo</p>
-        <button class="choose" type="button" data-choice="b">This one: sunset <span aria-hidden="true">→</span></button>
+        <button class="choose" type="button" data-choice="b">Choose the sunset <span aria-hidden="true">→</span></button>
       </div>
     </div>
   </section>
 
   <section class="chapter chapter-dinner" id="dinner" data-light="dinner" aria-labelledby="dinnerTitle">
-    <header class="chapter-heading dinner-heading">
+    <header class="chapter-heading chapter-cinema dinner-heading">
+      <div class="cinema-media" aria-hidden="true"><img src="img/gazebo-exterior.jpg" alt="" width="900" height="900"></div>
+      <div class="guide-lockup" aria-label="Michelin Guide selection and one Sol from Guía Repsol in 2026">
+        <img src="img/gazebo-michelin-2026.png" alt="Michelin Guide selected restaurant 2026" width="448" height="448">
+        <img src="img/gazebo-repsol-2026.png" alt="One Sol Guía Repsol 2026" width="612" height="448">
+      </div>
       <span class="chapter-index" aria-hidden="true">03</span>
       <h2 id="dinnerTitle" tabindex="-1">The secret garden</h2>
       <p class="promise">A hidden entrance, a drink in the garden, and either six or nine courses beside the open kitchen.</p>
+      <p class="chapter-proof">Michelin Guide selection · one Sol from Guía Repsol · 9.5 from verified diners</p>
     </header>
     <div class="dinner-arrival">
       <figure>
@@ -576,6 +627,22 @@
       <p>North to South is the six-moment version: snacks, couvert, one starter, one main, dessert and petit four, with a four-wine pairing included. East to West stretches dinner to nine moments by adding another starter, another main and a pre-dessert, without the pairing. Coffee and tea are included with both.</p>
       <p class="menu-recommendation">If this is the gift you choose, I think North to South with the wines makes the most sense: still a full tasting menu, but with the pairings chosen for every part of it.</p>
     </div>
+    <section class="recognition-spread" aria-label="Gazebo's independent recognition">
+      <div class="recognition-marks">
+        <figure>
+          <img src="img/gazebo-michelin-2026.png" alt="Michelin Guide selected restaurant 2026" width="448" height="448" loading="lazy" decoding="async">
+          <figcaption>Michelin Guide · 2026</figcaption>
+        </figure>
+        <figure>
+          <img src="img/gazebo-repsol-2026.png" alt="One Sol Guía Repsol 2026" width="612" height="448" loading="lazy" decoding="async">
+          <figcaption>Guía Repsol · one Sol</figcaption>
+        </figure>
+      </div>
+      <div class="recognition-copy">
+        <h3>A hidden room that the guides found.</h3>
+        <p>Michelin includes Gazebo in its Madeira selection, and Guía Repsol awarded it one Sol in 2026. On TheFork, more than 200 verified reviews currently average 9.5 out of 10. The room may feel private and undiscovered; the cooking is anything but overlooked.</p>
+      </div>
+    </section>
     <div class="dinner-ending">
       <div class="dinner-food">
         <figure class="media visual-mask"><img src="img/gazebo-plating.jpg" alt="A seasonal Gazebo course built around fruit, herbs and crisp vegetables" width="900" height="900" loading="lazy" decoding="async"></figure>
@@ -586,12 +653,9 @@
       <div class="story-copy dinner-ending-copy">
         <h3>People remember the whole evening.</h3>
         <p>The plates are precise and the wine pairings get a lot of praise, but Gazebo never seems to lose the feeling of being invited into somebody's house. There are family antiques around us, banana leaves outside the windows and only about twenty-two guests.</p>
-        <div class="dinner-recognition">
-          <p>Michelin includes Gazebo in its Madeira selection, and Guía Repsol awarded it one Sol in 2026.</p>
-          <p>On TheFork, more than 200 verified reviews currently average 9.5 out of 10. They keep coming back to the same things: surprising flavours, Filipe explaining the food himself, the intimate room and service that feels genuinely personal.</p>
-        </div>
+        <p>Verified diners keep coming back to the same things: surprising flavours, Filipe explaining the food himself, the intimate room and service that feels genuinely personal.</p>
         <p class="personal">That is what made me choose it. The guides notice the cooking; people remember being welcomed into the house. Ringing an unmarked doorbell and ending up at this table feels like the kind of Madeira story we would still be telling afterwards.</p>
-        <button class="choose" type="button" data-choice="c">This one: Gazebo <span aria-hidden="true">→</span></button>
+        <button class="choose" type="button" data-choice="c">Choose Gazebo <span aria-hidden="true">→</span></button>
       </div>
     </div>
   </section>
@@ -642,6 +706,20 @@
     img.addEventListener('error',function(){markMissing(img);});
     if(img.complete&&img.naturalWidth===0) markMissing(img);
   });
+
+  var cinemaVideos=Array.from(document.querySelectorAll('.cinema-video'));
+  if(!reduced&&'IntersectionObserver' in window){
+    var videoObserver=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var video=entry.target;
+        if(entry.isIntersecting){
+          var playing=video.play();
+          if(playing&&playing.catch) playing.catch(function(){});
+        } else { video.pause(); }
+      });
+    },{rootMargin:'120px 0px',threshold:.18});
+    cinemaVideos.forEach(function(video){videoObserver.observe(video);});
+  }
 
   function showJourney(hash){
     opening.hidden=true;
